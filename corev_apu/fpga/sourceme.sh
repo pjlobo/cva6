@@ -28,3 +28,11 @@ if [ "$BOARD" = "vc707" ]; then
   export XILINX_BOARD="xilinx.com:vc707:part0:1.3"
   export CLK_PERIOD_NS="20"
 fi
+
+if [ "$BOARD" = "vcu128" ]; then
+  echo -n "Configuring for "
+  echo "Virtex UtraScale+ vcu128"
+  export XILINX_PART="xcvu37p-fsvh2892-2-e"
+  export XILINX_BOARD="xilinx.com:vcu128:part0:1.0"
+  export CLK_PERIOD_NS="20"
+fi
