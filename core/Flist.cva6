@@ -27,6 +27,11 @@
 
 +define+WT_DCACHE
 
+//FPGA memories
+${CVA6_REPO_DIR}/vendor/pulp-platform/fpga-support/rtl/SyncDpRam.sv
+${CVA6_REPO_DIR}/vendor/pulp-platform/fpga-support/rtl/AsyncDpRam.sv
+${CVA6_REPO_DIR}/vendor/pulp-platform/fpga-support/rtl/AsyncThreePortRam.sv
+
 +incdir+${CVA6_REPO_DIR}/vendor/pulp-platform/common_cells/include/
 +incdir+${CVA6_REPO_DIR}/vendor/pulp-platform/common_cells/src/
 +incdir+${CVA6_REPO_DIR}/common/local/util/
@@ -89,9 +94,6 @@ ${CVA6_REPO_DIR}/vendor/pulp-platform/fpnew/src/fpu_div_sqrt_mvp/hdl/norm_div_sq
 ${CVA6_REPO_DIR}/vendor/pulp-platform/fpnew/src/fpu_div_sqrt_mvp/hdl/nrbd_nrsc_mvp.sv
 ${CVA6_REPO_DIR}/vendor/pulp-platform/fpnew/src/fpu_div_sqrt_mvp/hdl/preprocess_mvp.sv
 
-//FPGA memories
-${CVA6_REPO_DIR}/common/local/techlib/fpga/rtl/SyncDpRam.sv
-
 // Top-level source files (not necessarily instantiated at the top of the cva6).
 ${CVA6_REPO_DIR}/core/ariane.sv
 ${CVA6_REPO_DIR}/core/cva6.sv
@@ -117,6 +119,7 @@ ${CVA6_REPO_DIR}/core/multiplier.sv
 ${CVA6_REPO_DIR}/core/serdiv.sv
 ${CVA6_REPO_DIR}/core/perf_counters.sv
 ${CVA6_REPO_DIR}/core/ariane_regfile_ff.sv
+${CVA6_REPO_DIR}/core/ariane_regfile_fpga.sv
 ${CVA6_REPO_DIR}/core/re_name.sv
 // NOTE: scoreboard.sv modified for DSIM (unchanged for other simulators)
 ${CVA6_REPO_DIR}/core/scoreboard.sv
