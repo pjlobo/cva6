@@ -11,36 +11,37 @@
 // Description: Xilinx FPGA top-level
 // Author: Florian Zaruba <zarubaf@iis.ee.ethz.ch>
 
+`ifdef GENESYSII
+ `define ARIANE_XILINX_ETH_RGMII
+ `define ARIANE_XILINX_MEM_DDR3
+ `define ARIANE_XILINX_CPU_RESET_ACTIVE_LOW
+`endif
+`ifdef KC705
+ `define ARIANE_XILINX_ETH_RGMII
+ `define ARIANE_XILINX_MEM_DDR3
+ `define ARIANE_XILINX_CPU_RESET_ACTIVE_HIGH
+`endif
+`ifdef VC707
+ `define ARIANE_XILINX_ETH_SGMII
+ `define ARIANE_XILINX_MEM_DDR3
+ `define ARIANE_XILINX_CPU_RESET_ACTIVE_HIGH
+`endif
+`ifdef VCU118
+ `define ARIANE_XILINX_ETH_SGMII
+ `define ARIANE_XILINX_MEM_DDR4
+ `define ARIANE_XILINX_CPU_RESET_ACTIVE_HIGH
+`endif
+`ifdef VCU128
+ `define ARIANE_XILINX_ETH_SGMII
+ `define ARIANE_XILINX_MEM_DDR4
+ `define ARIANE_XILINX_CPU_RESET_ACTIVE_HIGH
+`endif
+
 module ariane_xilinx (
 `ifdef GENESYSII
   input  logic         sys_clk_p   ,
   input  logic         sys_clk_n   ,
-  input  logic         cpu_resetn  ,
-  inout  wire  [31:0]  ddr3_dq     ,
-  inout  wire  [ 3:0]  ddr3_dqs_n  ,
-  inout  wire  [ 3:0]  ddr3_dqs_p  ,
-  output logic [14:0]  ddr3_addr   ,
-  output logic [ 2:0]  ddr3_ba     ,
-  output logic         ddr3_ras_n  ,
-  output logic         ddr3_cas_n  ,
-  output logic         ddr3_we_n   ,
-  output logic         ddr3_reset_n,
-  output logic [ 0:0]  ddr3_ck_p   ,
-  output logic [ 0:0]  ddr3_ck_n   ,
-  output logic [ 0:0]  ddr3_cke    ,
-  output logic [ 0:0]  ddr3_cs_n   ,
-  output logic [ 3:0]  ddr3_dm     ,
-  output logic [ 0:0]  ddr3_odt    ,
 
-  output wire          eth_rst_n   ,
-  input  wire          eth_rxck    ,
-  input  wire          eth_rxctl   ,
-  input  wire [3:0]    eth_rxd     ,
-  output wire          eth_txck    ,
-  output wire          eth_txctl   ,
-  output wire [3:0]    eth_txd     ,
-  inout  wire          eth_mdio    ,
-  output logic         eth_mdc     ,
   output logic [ 7:0]  led         ,
   input  logic [ 7:0]  sw          ,
   output logic         fan_pwm     ,
@@ -48,33 +49,8 @@ module ariane_xilinx (
 `elsif KC705
   input  logic         sys_clk_p   ,
   input  logic         sys_clk_n   ,
-
   input  logic         cpu_reset   ,
-  inout  logic [63:0]  ddr3_dq     ,
-  inout  logic [ 7:0]  ddr3_dqs_n  ,
-  inout  logic [ 7:0]  ddr3_dqs_p  ,
-  output logic [13:0]  ddr3_addr   ,
-  output logic [ 2:0]  ddr3_ba     ,
-  output logic         ddr3_ras_n  ,
-  output logic         ddr3_cas_n  ,
-  output logic         ddr3_we_n   ,
-  output logic         ddr3_reset_n,
-  output logic [ 0:0]  ddr3_ck_p   ,
-  output logic [ 0:0]  ddr3_ck_n   ,
-  output logic [ 0:0]  ddr3_cke    ,
-  output logic [ 0:0]  ddr3_cs_n   ,
-  output logic [ 7:0]  ddr3_dm     ,
-  output logic [ 0:0]  ddr3_odt    ,
 
-  output wire          eth_rst_n   ,
-  input  wire          eth_rxck    ,
-  input  wire          eth_rxctl   ,
-  input  wire [3:0]    eth_rxd     ,
-  output wire          eth_txck    ,
-  output wire          eth_txctl   ,
-  output wire [3:0]    eth_txd     ,
-  inout  wire          eth_mdio    ,
-  output logic         eth_mdc     ,
   output logic [ 3:0]  led         ,
   input  logic [ 3:0]  sw          ,
   output logic         fan_pwm     ,
@@ -83,6 +59,42 @@ module ariane_xilinx (
   input  logic         sys_clk_p   ,
   input  logic         sys_clk_n   ,
   input  logic         cpu_reset   ,
+
+  output logic [ 7:0]  led         ,
+  input  logic [ 7:0]  sw          ,
+  output logic         fan_pwm     ,
+  input  logic         trst        ,
+`elsif VCU118
+  input  wire          sys_clk_p       ,  // 100 MHz Clock for PCIe
+  input  wire          sys_clk_n       ,  // 100 MHz Clock for PCIE
+  input  wire          sys_rst_n       ,  // PCIe Reset
+  input  logic         cpu_reset       ,  // CPU subsystem reset
+  output wire [7:0]    pci_exp_txp     ,
+  output wire [7:0]    pci_exp_txn     ,
+  input  wire [7:0]    pci_exp_rxp     ,
+  input  wire [7:0]    pci_exp_rxn     ,
+  input  logic         trst_n          ,
+`elsif VCU128
+  input  wire          sys_clk_p       ,  // 100 MHz Clock for PCIe
+  input  wire          sys_clk_n       ,  // 100 MHz Clock for PCIE
+  input  wire          sys_rst_n       ,  // PCIe Reset
+  input  logic         cpu_reset       ,  // CPU subsystem reset
+  //output wire [7:0]    pci_exp_txp     , // XXX Disabled for now
+  //output wire [7:0]    pci_exp_txn     ,
+  //input  wire [7:0]    pci_exp_rxp     ,
+  //input  wire [7:0]    pci_exp_rxn     ,
+  input  logic         trst_n          ,
+  // Ethernet SGMII
+  // LEDs
+  output logic [ 7:0]  led         , // GPIO_LED_7_LS .. GPIO_LED_0_LS
+`endif // !`elsif VCU128
+`ifdef ARIANE_XILINX_CPU_RESET_ACTIVE_LOW
+  input  logic         cpu_resetn  ,
+`endif  // ARIANE_XILINX_CPU_RESET_ACTIVE_LOW
+`ifdef ARIANE_XILINX_CPU_RESET_ACTIVE_HIGH
+  input  logic         cpu_reset   ,
+`endif  // ARIANE_XILINX_CPU_RESET_ACTIVE_HIGH
+`ifdef ARIANE_XILINX_MEM_DDR3
   inout  wire  [63:0]  ddr3_dq     ,
   inout  wire  [ 7:0]  ddr3_dqs_n  ,
   inout  wire  [ 7:0]  ddr3_dqs_p  ,
@@ -98,26 +110,10 @@ module ariane_xilinx (
   output logic [ 0:0]  ddr3_cs_n   ,
   output logic [ 7:0]  ddr3_dm     ,
   output logic [ 0:0]  ddr3_odt    ,
-  output wire          eth_rst_n   ,
-  input  wire          eth_rxck    ,
-  input  wire          eth_rxctl   ,
-  input  wire [3:0]    eth_rxd     ,
-  output wire          eth_txck    ,
-  output wire          eth_txctl   ,
-  output wire [3:0]    eth_txd     ,
-  inout  wire          eth_mdio    ,
-  output logic         eth_mdc     ,
-  output logic [ 7:0]  led         ,
-  input  logic [ 7:0]  sw          ,
-  output logic         fan_pwm     ,
-  input  logic         trst        ,
-`elsif VCU118
+`endif //  `ifdef ARIANE_XILINX_MEM_DDR3
+`ifdef ARIANE_XILINX_MEM_DDR4
   input  wire          c0_sys_clk_p    ,  // 250 MHz Clock for DDR
   input  wire          c0_sys_clk_n    ,  // 250 MHz Clock for DDR
-  input  wire          sys_clk_p       ,  // 100 MHz Clock for PCIe
-  input  wire          sys_clk_n       ,  // 100 MHz Clock for PCIE
-  input  wire          sys_rst_n       ,  // PCIe Reset
-  input  logic         cpu_reset       ,  // CPU subsystem reset
   output wire [16:0]   c0_ddr4_adr     ,
   output wire [1:0]    c0_ddr4_ba      ,
   output wire [0:0]    c0_ddr4_cke     ,
@@ -132,19 +128,36 @@ module ariane_xilinx (
   output wire          c0_ddr4_act_n   ,
   output wire [0:0]    c0_ddr4_ck_c    ,
   output wire [0:0]    c0_ddr4_ck_t    ,
-  output wire [7:0]    pci_exp_txp     ,
-  output wire [7:0]    pci_exp_txn     ,
-  input  wire [7:0]    pci_exp_rxp     ,
-  input  wire [7:0]    pci_exp_rxn     ,
-  input  logic         trst_n          ,
-`endif
+`endif //  `ifdef ARIANE_XILINX_MEM_DDR4
+`ifdef ARIANE_XILINX_ETH_RGMII
+  output wire          eth_rst_n   ,
+  input  wire          eth_rxck    ,
+  input  wire          eth_rxctl   ,
+  input  wire [3:0]    eth_rxd     ,
+  output wire          eth_txck    ,
+  output wire          eth_txctl   ,
+  output wire [3:0]    eth_txd     ,
+  inout  wire          eth_mdio    ,
+  output logic         eth_mdc     ,
+`endif //  `ifdef ARIANE_XILINX_ETH_RGMII
+`ifdef ARIANE_XILINX_ETH_SGMII
+  output wire          eth_rst_n   ,
+  input  wire          eth_sgmii_rxck_p,
+  input  wire          eth_sgmii_rxck_n,
+  input  wire          eth_sgmii_rx_p  ,
+  input  wire          eth_sgmii_rx_n  ,
+  input  wire          eth_int_n       ,
+  output wire          eth_sgmii_tx_p  ,
+  output wire          eth_sgmii_tx_n  ,
+  inout  wire          eth_mdio        ,
+  output logic         eth_mdc         ,
+`endif //  `ifdef ARIANE_XILINX_ETH_SGMII
   // SPI
   output logic        spi_mosi    ,
   input  logic        spi_miso    ,
   output logic        spi_ss      ,
   output logic        spi_clk_o   ,
   // common part
-  // input logic      trst_n      ,
   input  logic        tck         ,
   input  logic        tms         ,
   input  logic        tdi         ,
@@ -210,16 +223,17 @@ logic rst_n, rst;
 logic rtc;
 
 // we need to switch reset polarity
-`ifdef VCU118
+`ifdef ARIANE_XILINX_CPU_RESET_ACTIVE_HIGH
 logic cpu_resetn;
 assign cpu_resetn = ~cpu_reset;
-`elsif GENESYSII
+`endif  // ARIANE_XILINX_CPU_RESET_ACTIVE_HIGH
+`ifdef ARIANE_XILINX_CPU_RESET_ACTIVE_LOW
 logic cpu_reset;
 assign cpu_reset  = ~cpu_resetn;
-`elsif KC705
-assign cpu_resetn = ~cpu_reset;
-`elsif VC707
-assign cpu_resetn = ~cpu_reset;
+`endif  // ARIANE_XILINX_CPU_RESET_ACTIVE_LOW
+
+`ifdef VC707
+logic trst_n;
 assign trst_n = ~trst;
 `endif
 
@@ -813,6 +827,9 @@ ariane_peripherals #(
     `elsif VCU118
     .InclSPI      ( 1'b0         ),
     .InclEthernet ( 1'b0         )
+    `elsif VCU128
+    .InclSPI      ( 1'b0         ),
+    .InclEthernet ( 1'b0         )
     `endif
 ) i_ariane_peripherals (
     .clk_i        ( clk                          ),
@@ -828,6 +845,7 @@ ariane_peripherals #(
     .irq_o        ( irq                          ),
     .rx_i         ( rx                           ),
     .tx_o         ( tx                           ),
+    `ifdef ARIANE_XILINX_ETH_RGMII
     .eth_txck,
     .eth_rxck,
     .eth_rxctl,
@@ -838,6 +856,19 @@ ariane_peripherals #(
     .eth_mdio,
     .eth_mdc,
     .phy_tx_clk_i   ( phy_tx_clk                  ),
+    `endif //  `ifdef ARIANE_XILINX_ETH_RGMII
+    `ifdef ARIANE_XILINX_ETH_SGMII
+    .eth_rst_n,
+    .eth_sgmii_rxck_p,
+    .eth_sgmii_rxck_n,
+    .eth_sgmii_rx_p,
+    .eth_sgmii_rx_n,
+    .eth_int_n,
+    .eth_sgmii_tx_p,
+    .eth_sgmii_tx_n,
+    .eth_mdio,
+    .eth_mdc,
+    `endif //  `ifdef ARIANE_XILINX_ETH_SGMII
     .sd_clk_i       ( sd_clk_sys                  ),
     .spi_clk_o      ( spi_clk_o                   ),
     .spi_mosi       ( spi_mosi                    ),
@@ -1081,76 +1112,6 @@ fan_ctrl i_fan_ctrl (
     .pwm_setting_i ( '1         ),
     .fan_pwm_o     ( fan_pwm    )
 );
-
-xlnx_mig_7_ddr3 i_ddr (
-    .sys_clk_p,
-    .sys_clk_n,
-    .ddr3_dq,
-    .ddr3_dqs_n,
-    .ddr3_dqs_p,
-    .ddr3_addr,
-    .ddr3_ba,
-    .ddr3_ras_n,
-    .ddr3_cas_n,
-    .ddr3_we_n,
-    .ddr3_reset_n,
-    .ddr3_ck_p,
-    .ddr3_ck_n,
-    .ddr3_cke,
-    .ddr3_cs_n,
-    .ddr3_dm,
-    .ddr3_odt,
-    .mmcm_locked     (                ), // keep open
-    .app_sr_req      ( '0             ),
-    .app_ref_req     ( '0             ),
-    .app_zq_req      ( '0             ),
-    .app_sr_active   (                ), // keep open
-    .app_ref_ack     (                ), // keep open
-    .app_zq_ack      (                ), // keep open
-    .ui_clk          ( ddr_clock_out  ),
-    .ui_clk_sync_rst ( ddr_sync_reset ),
-    .aresetn         ( ndmreset_n     ),
-    .s_axi_awid,
-    .s_axi_awaddr    ( s_axi_awaddr[29:0] ),
-    .s_axi_awlen,
-    .s_axi_awsize,
-    .s_axi_awburst,
-    .s_axi_awlock,
-    .s_axi_awcache,
-    .s_axi_awprot,
-    .s_axi_awqos,
-    .s_axi_awvalid,
-    .s_axi_awready,
-    .s_axi_wdata,
-    .s_axi_wstrb,
-    .s_axi_wlast,
-    .s_axi_wvalid,
-    .s_axi_wready,
-    .s_axi_bready,
-    .s_axi_bid,
-    .s_axi_bresp,
-    .s_axi_bvalid,
-    .s_axi_arid,
-    .s_axi_araddr     ( s_axi_araddr[29:0] ),
-    .s_axi_arlen,
-    .s_axi_arsize,
-    .s_axi_arburst,
-    .s_axi_arlock,
-    .s_axi_arcache,
-    .s_axi_arprot,
-    .s_axi_arqos,
-    .s_axi_arvalid,
-    .s_axi_arready,
-    .s_axi_rready,
-    .s_axi_rid,
-    .s_axi_rdata,
-    .s_axi_rresp,
-    .s_axi_rlast,
-    .s_axi_rvalid,
-    .init_calib_complete (            ), // keep open
-    .device_temp         (            ), // keep open
-    .sys_rst             ( cpu_resetn )
-);
 `elsif VC707
 fan_ctrl i_fan_ctrl (
     .clk_i         ( clk        ),
@@ -1158,7 +1119,9 @@ fan_ctrl i_fan_ctrl (
     .pwm_setting_i ( '1         ),
     .fan_pwm_o     ( fan_pwm    )
 );
+`endif
 
+`ifdef ARIANE_XILINX_MEM_DDR3
 xlnx_mig_7_ddr3 i_ddr (
     .sys_clk_p,
     .sys_clk_n,
@@ -1228,7 +1191,9 @@ xlnx_mig_7_ddr3 i_ddr (
     .device_temp         (            ), // keep open
     .sys_rst             ( cpu_resetn )
 );
-`elsif VCU118
+`endif  // ARIANE_XILINX_MEM_DDR3
+
+`ifdef ARIANE_XILINX_MEM_DDR4
 
   logic [63:0]  dram_dwidth_axi_awaddr;
   logic [7:0]   dram_dwidth_axi_awlen;
@@ -1408,7 +1373,9 @@ axi_dwidth_converter_512_64 i_axi_dwidth_converter_512_64 (
     .sys_rst                ( cpu_reset                    )
   );
 
+`endif  // ARIANE_XILINX_MEM_DDR4
 
+`ifdef VCU118 // XXX Probably also VCU128
   logic pcie_ref_clk;
   logic pcie_ref_clk_gt;
 
@@ -1742,6 +1709,6 @@ axi_clock_converter_0 pcie_axi_clock_converter (
   .s_axi_rvalid   ( pcie_dwidth_axi_rvalid   ),
   .s_axi_rready   ( pcie_dwidth_axi_rready   )
 );
-`endif
+`endif  // VCU118
 
 endmodule

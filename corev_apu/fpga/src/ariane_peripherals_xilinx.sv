@@ -38,6 +38,7 @@ module ariane_peripherals #(
     input  logic       rx_i            ,
     output logic       tx_o            ,
     // Ethernet
+`ifdef ARIANE_XILINX_ETH_RGMII
     input  logic       eth_clk_i       ,
     input  wire        eth_rxck        ,
     input  wire        eth_rxctl       ,
@@ -46,10 +47,22 @@ module ariane_peripherals #(
     output wire        eth_txctl       ,
     output wire [3:0]  eth_txd         ,
     output wire        eth_rst_n       ,
-    input  logic       phy_tx_clk_i    , // 125 MHz Clock
-    // MDIO Interface
     inout  wire        eth_mdio        ,
     output logic       eth_mdc         ,
+    input  logic       phy_tx_clk_i    , // 125 MHz Clock
+`endif //  `ifdef ARIANE_XILINX_ETH_RGMII
+`ifdef ARIANE_XILINX_ETH_SGMII
+    output wire        eth_rst_n   ,
+    input  wire        eth_sgmii_rxck_p,
+    input  wire        eth_sgmii_rxck_n,
+    input  wire        eth_sgmii_rx_p  ,
+    input  wire        eth_sgmii_rx_n  ,
+    input  wire        eth_int_n       ,
+    output wire        eth_sgmii_tx_p  ,
+    output wire        eth_sgmii_tx_n  ,
+    inout  wire        eth_mdio        ,
+    output logic       eth_mdc         ,
+`endif //  `ifdef ARIANE_XILINX_ETH_SGMII
     // SPI
     output logic       spi_clk_o       ,
     output logic       spi_mosi        ,
@@ -533,6 +546,7 @@ module ariane_peripherals #(
         .data_i ( eth_rdata               )
     );
 
+    // XXX Needs adaptation for boards with a SGMII PHY interface
     framing_top eth_rgmii (
        .msoc_clk(clk_i),
        .core_lsu_addr(eth_addr[14:0]),
