@@ -11,30 +11,34 @@
 // Description: Xilinx FPGA top-level
 // Author: Florian Zaruba <zarubaf@iis.ee.ethz.ch>
 
+//
+// Modified by: Pedro Lobo <pedro.lobo@upm.es>
+
 `ifdef GENESYSII
  `define ARIANE_XILINX_ETH_RGMII
  `define ARIANE_XILINX_MEM_DDR3
  `define ARIANE_XILINX_CPU_RESET_ACTIVE_LOW
-`endif
-`ifdef KC705
+`elsif KC705
  `define ARIANE_XILINX_ETH_RGMII
  `define ARIANE_XILINX_MEM_DDR3
  `define ARIANE_XILINX_CPU_RESET_ACTIVE_HIGH
-`endif
-`ifdef VC707
+`elsif VC707
  `define ARIANE_XILINX_ETH_SGMII
  `define ARIANE_XILINX_MEM_DDR3
  `define ARIANE_XILINX_CPU_RESET_ACTIVE_HIGH
-`endif
-`ifdef VCU118
+`elsif VCU118
  `define ARIANE_XILINX_ETH_SGMII
  `define ARIANE_XILINX_MEM_DDR4
  `define ARIANE_XILINX_CPU_RESET_ACTIVE_HIGH
-`endif
-`ifdef VCU128
+`elsif VCU128
  `define ARIANE_XILINX_ETH_SGMII
  `define ARIANE_XILINX_MEM_DDR4
  `define ARIANE_XILINX_CPU_RESET_ACTIVE_HIGH
+`else
+ // This is *not* valid SystemVerilog and will trigger a syntax error but it
+ // will stop compilation if no board constant is defined, which is the desired
+ // effect. Unfortunately, SystemVerilog has no equivalent to C's #error
+ $fatal(1, "One of the board constants (GENESYSII, KC705...) has to be defined")
 `endif
 
 module ariane_xilinx (
