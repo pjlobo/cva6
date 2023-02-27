@@ -72,6 +72,10 @@ else ifeq ($(BOARD), vc707)
 	XILINX_PART              := xc7vx485tffg1761-2
 	XILINX_BOARD             := xilinx.com:vc707:part0:1.3
 	CLK_PERIOD_NS            := 20
+else ifeq ($(BOARD), vcu128)
+	XILINX_PART              := xcvu37p-fsvh2892-2L-e
+	XILINX_BOARD             := xilinx.com:vcu128:part0:1.0
+	CLK_PERIOD_NS            := 10
 else
 $(error Unknown board - please specify a supported FPGA board)
 endif
@@ -729,6 +733,7 @@ fpga_filter += $(addprefix $(root-dir), vendor/pulp-platform/tech_cells_generic/
 fpga_filter += $(addprefix $(root-dir), common/local/util/tc_sram_wrapper.sv)
 
 fpga: $(ariane_pkg) $(src) $(fpga_src) $(uart_src) $(src_flist)
+	@echo "[FPGA] Board: $(BOARD)"
 	@echo "[FPGA] Generate sources"
 	@echo read_vhdl        {$(uart_src)}    > corev_apu/fpga/scripts/add_sources.tcl
 	@echo read_verilog -sv {$(ariane_pkg)} >> corev_apu/fpga/scripts/add_sources.tcl
