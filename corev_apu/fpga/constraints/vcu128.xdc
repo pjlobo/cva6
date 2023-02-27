@@ -22,57 +22,423 @@ set_property -dict {PACKAGE_PIN BN26 IOSTANDARD  LVCMOS18}  [get_ports tx] ;
 # set_property IOSTANDARD  LVCMOS18 [get_ports "UART0_TXD"] ;# Bank  67 VCCO - VCC1V8   - IO_L2P_T0L_N2_67
 
 # LEDs
-set_property -dict {PACKAGE_PIN BG28 IOSTANDARD LVCMOS18} [get_ports {leds[7]}]
+set_property -dict {PACKAGE_PIN BG28 IOSTANDARD LVCMOS18} [get_ports {leds[7]}] ;
 # set_property PACKAGE_PIN BG28     [get_ports "GPIO_LED_7_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L15P_T2L_N4_AD11P_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "GPIO_LED_7_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L15P_T2L_N4_AD11P_67
-set_property -dict {PACKAGE_PIN BG27 IOSTANDARD LVCMOS18} [get_ports {leds[6]}]
+set_property -dict {PACKAGE_PIN BG27 IOSTANDARD LVCMOS18} [get_ports {leds[6]}] ;
 # set_property PACKAGE_PIN BG27     [get_ports "GPIO_LED_6_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L15N_T2L_N5_AD11N_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "GPIO_LED_6_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L15N_T2L_N5_AD11N_67
-set_property -dict {PACKAGE_PIN BF27 IOSTANDARD LVCMOS18} [get_ports {leds[5]}]
+set_property -dict {PACKAGE_PIN BF27 IOSTANDARD LVCMOS18} [get_ports {leds[5]}] ;
 # set_property PACKAGE_PIN BF27     [get_ports "GPIO_LED_5_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L16P_T2U_N6_QBC_AD3P_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "GPIO_LED_5_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L16P_T2U_N6_QBC_AD3P_67
-set_property -dict {PACKAGE_PIN BF26 IOSTANDARD LVCMOS18} [get_ports {leds[4]}]
+set_property -dict {PACKAGE_PIN BF26 IOSTANDARD LVCMOS18} [get_ports {leds[4]}] ;
 # set_property PACKAGE_PIN BF26     [get_ports "GPIO_LED_4_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L16N_T2U_N7_QBC_AD3N_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "GPIO_LED_4_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L16N_T2U_N7_QBC_AD3N_67
-set_property -dict {PACKAGE_PIN BF25 IOSTANDARD LVCMOS18} [get_ports {leds[3]}]
+set_property -dict {PACKAGE_PIN BF25 IOSTANDARD LVCMOS18} [get_ports {leds[3]}] ;
 # set_property PACKAGE_PIN BF25     [get_ports "GPIO_LED_3_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L17P_T2U_N8_AD10P_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "GPIO_LED_3_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L17P_T2U_N8_AD10P_67
-set_property -dict {PACKAGE_PIN BG25 IOSTANDARD LVCMOS18} [get_ports {leds[2]}]
+set_property -dict {PACKAGE_PIN BG25 IOSTANDARD LVCMOS18} [get_ports {leds[2]}] ;
 # set_property PACKAGE_PIN BG25     [get_ports "GPIO_LED_2_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L17N_T2U_N9_AD10N_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "GPIO_LED_2_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L17N_T2U_N9_AD10N_67
-set_property -dict {PACKAGE_PIN BG24 IOSTANDARD LVCMOS18} [get_ports {leds[1]}]
+set_property -dict {PACKAGE_PIN BG24 IOSTANDARD LVCMOS18} [get_ports {leds[1]}] ;
 # set_property PACKAGE_PIN BG24     [get_ports "GPIO_LED_1_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L18P_T2U_N10_AD2P_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "GPIO_LED_1_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L18P_T2U_N10_AD2P_67
-set_property -dict {PACKAGE_PIN BH24 IOSTANDARD LVCMOS18} [get_ports {leds[0]}]
+set_property -dict {PACKAGE_PIN BH24 IOSTANDARD LVCMOS18} [get_ports {leds[0]}] ;
 # set_property PACKAGE_PIN BH24     [get_ports "GPIO_LED_0_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L18N_T2U_N11_AD2N_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "GPIO_LED_0_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L18N_T2U_N11_AD2N_67
 
+# DDR4
+						# c0_ddr4_dqs_c
+set_property -dict {PACKAGE_PIN BK30 IOSTANDARD DIFF_POD12_DCI} [get_ports {c0_ddr4_dqs_c[7]}] ;
+# set_property PACKAGE_PIN BK30           [get_ports "PL_DDR4_DQS7_C"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L22N_T3U_N7_DBC_AD0N_64
+# set_property IOSTANDARD  DIFF_POD12_DCI [get_ports "PL_DDR4_DQS7_C"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L22N_T3U_N7_DBC_AD0N_64
+set_property -dict {PACKAGE_PIN BK35 IOSTANDARD DIFF_POD12_DCI} [get_ports {c0_ddr4_dqs_c[6]}] ;
+# set_property PACKAGE_PIN BK35           [get_ports "PL_DDR4_DQS6_C"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L16N_T2U_N7_QBC_AD3N_64
+# set_property IOSTANDARD  DIFF_POD12_DCI [get_ports "PL_DDR4_DQS6_C"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L16N_T2U_N7_QBC_AD3N_64
+set_property -dict {PACKAGE_PIN BM35 IOSTANDARD DIFF_POD12_DCI} [get_ports {c0_ddr4_dqs_c[5]}] ;
+# set_property PACKAGE_PIN BM35           [get_ports "PL_DDR4_DQS5_C"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L10N_T1U_N7_QBC_AD4N_64
+# set_property IOSTANDARD  DIFF_POD12_DCI [get_ports "PL_DDR4_DQS5_C"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L10N_T1U_N7_QBC_AD4N_64
+set_property -dict {PACKAGE_PIN BN30 IOSTANDARD DIFF_POD12_DCI} [get_ports {c0_ddr4_dqs_c[4]}] ;
+# set_property PACKAGE_PIN BN30           [get_ports "PL_DDR4_DQS4_C"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L4N_T0U_N7_DBC_AD7N_64
+# set_property IOSTANDARD  DIFF_POD12_DCI [get_ports "PL_DDR4_DQS4_C"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L4N_T0U_N7_DBC_AD7N_64
+set_property -dict {PACKAGE_PIN BE46 IOSTANDARD DIFF_POD12_DCI} [get_ports {c0_ddr4_dqs_c[3]}] ;
+# set_property PACKAGE_PIN BE46           [get_ports "PL_DDR4_DQS3_C"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L22N_T3U_N7_DBC_AD0N_D05_65
+# set_property IOSTANDARD  DIFF_POD12_DCI [get_ports "PL_DDR4_DQS3_C"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L22N_T3U_N7_DBC_AD0N_D05_65
+set_property -dict {PACKAGE_PIN BJ46 IOSTANDARD DIFF_POD12_DCI} [get_ports {c0_ddr4_dqs_c[2]}] ;
+# set_property PACKAGE_PIN BJ46           [get_ports "PL_DDR4_DQS2_C"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L16N_T2U_N7_QBC_AD3N_A01_D17_65
+# set_property IOSTANDARD  DIFF_POD12_DCI [get_ports "PL_DDR4_DQS2_C"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L16N_T2U_N7_QBC_AD3N_A01_D17_65
+set_property -dict {PACKAGE_PIN BK46 IOSTANDARD DIFF_POD12_DCI} [get_ports {c0_ddr4_dqs_c[1]}] ;
+# set_property PACKAGE_PIN BK46           [get_ports "PL_DDR4_DQS1_C"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L10N_T1U_N7_QBC_AD4N_A13_D29_65
+# set_property IOSTANDARD  DIFF_POD12_DCI [get_ports "PL_DDR4_DQS1_C"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L10N_T1U_N7_QBC_AD4N_A13_D29_65
+set_property -dict {PACKAGE_PIN BP46 IOSTANDARD DIFF_POD12_DCI} [get_ports {c0_ddr4_dqs_c[0]}] ;
+# set_property PACKAGE_PIN BP46           [get_ports "PL_DDR4_DQS0_C"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L4N_T0U_N7_DBC_AD7N_A25_65
+# set_property IOSTANDARD  DIFF_POD12_DCI [get_ports "PL_DDR4_DQS0_C"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L4N_T0U_N7_DBC_AD7N_A25_65
+                               
+						# c0_ddr4_dqs_t								
+set_property -dict {PACKAGE_PIN BJ29 IOSTANDARD DIFF_POD12_DCI} [get_ports {c0_ddr4_dqs_t[7]}] ;
+# set_property PACKAGE_PIN BJ29           [get_ports "PL_DDR4_DQS7_T"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L22P_T3U_N6_DBC_AD0P_64
+# set_property IOSTANDARD  DIFF_POD12_DCI [get_ports "PL_DDR4_DQS7_T"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L22P_T3U_N6_DBC_AD0P_64
+set_property -dict {PACKAGE_PIN BK34 IOSTANDARD DIFF_POD12_DCI} [get_ports {c0_ddr4_dqs_t[6]}] ;
+# set_property PACKAGE_PIN BK34           [get_ports "PL_DDR4_DQS6_T"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L16P_T2U_N6_QBC_AD3P_64
+# set_property IOSTANDARD  DIFF_POD12_DCI [get_ports "PL_DDR4_DQS6_T"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L16P_T2U_N6_QBC_AD3P_64
+set_property -dict {PACKAGE_PIN BL35 IOSTANDARD DIFF_POD12_DCI} [get_ports {c0_ddr4_dqs_t[5]}] ;
+# set_property PACKAGE_PIN BL35           [get_ports "PL_DDR4_DQS5_T"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L10P_T1U_N6_QBC_AD4P_64
+# set_property IOSTANDARD  DIFF_POD12_DCI [get_ports "PL_DDR4_DQS5_T"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L10P_T1U_N6_QBC_AD4P_64
+set_property -dict {PACKAGE_PIN BN29 IOSTANDARD DIFF_POD12_DCI} [get_ports {c0_ddr4_dqs_t[4]}] ;
+# set_property PACKAGE_PIN BN29           [get_ports "PL_DDR4_DQS4_T"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L4P_T0U_N6_DBC_AD7P_64
+# set_property IOSTANDARD  DIFF_POD12_DCI [get_ports "PL_DDR4_DQS4_T"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L4P_T0U_N6_DBC_AD7P_64
+set_property -dict {PACKAGE_PIN BE45 IOSTANDARD DIFF_POD12_DCI} [get_ports {c0_ddr4_dqs_t[3]}] ;
+# set_property PACKAGE_PIN BE45           [get_ports "PL_DDR4_DQS3_T"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L22P_T3U_N6_DBC_AD0P_D04_65
+# set_property IOSTANDARD  DIFF_POD12_DCI [get_ports "PL_DDR4_DQS3_T"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L22P_T3U_N6_DBC_AD0P_D04_65
+set_property -dict {PACKAGE_PIN BH46 IOSTANDARD DIFF_POD12_DCI} [get_ports {c0_ddr4_dqs_t[2]}] ;
+# set_property PACKAGE_PIN BH46           [get_ports "PL_DDR4_DQS2_T"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L16P_T2U_N6_QBC_AD3P_A00_D16_65
+# set_property IOSTANDARD  DIFF_POD12_DCI [get_ports "PL_DDR4_DQS2_T"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L16P_T2U_N6_QBC_AD3P_A00_D16_65
+set_property -dict {PACKAGE_PIN BK45 IOSTANDARD DIFF_POD12_DCI} [get_ports {c0_ddr4_dqs_t[1]}] ;
+# set_property PACKAGE_PIN BK45           [get_ports "PL_DDR4_DQS1_T"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L10P_T1U_N6_QBC_AD4P_A12_D28_65
+# set_property IOSTANDARD  DIFF_POD12_DCI [get_ports "PL_DDR4_DQS1_T"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L10P_T1U_N6_QBC_AD4P_A12_D28_65
+set_property -dict {PACKAGE_PIN BN46 IOSTANDARD DIFF_POD12_DCI} [get_ports {c0_ddr4_dqs_t[0]}] ;
+# set_property PACKAGE_PIN BN46           [get_ports "PL_DDR4_DQS0_T"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L4P_T0U_N6_DBC_AD7P_A24_65
+# set_property IOSTANDARD  DIFF_POD12_DCI [get_ports "PL_DDR4_DQS0_T"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L4P_T0U_N6_DBC_AD7P_A24_65
 
-set_property -dict {PACKAGE_PIN BG22 IOSTANDARD LVDS} [get_ports eth_sgmii_tx_p]
+						# c0_ddr4_ba
+set_property -dict {PACKAGE_PIN BE54 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_ba[0]}] ;
+# set_property PACKAGE_PIN BE54       [get_ports "PL_DDR4_BA0"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L18N_T2U_N11_AD2N_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_BA0"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L18N_T2U_N11_AD2N_66
+set_property -dict {PACKAGE_PIN BE53 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_ba[1]}] ;
+# set_property PACKAGE_PIN BE53       [get_ports "PL_DDR4_BA1"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L18P_T2U_N10_AD2P_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_BA1"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L18P_T2U_N10_AD2P_66
+
+						# c0_ddr4_cke
+set_property -dict {PACKAGE_PIN BH52 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_cke}] ;
+# set_property PACKAGE_PIN BH52       [get_ports "PL_DDR4_CKE"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L14N_T2L_N3_GC_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_CKE"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L14N_T2L_N3_GC_66
+
+						# c0_ddr4_dq             
+set_property -dict {PACKAGE_PIN BF33 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[63]}] ;
+# set_property PACKAGE_PIN BF33      [get_ports "PL_DDR4_DQ63"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L23N_T3U_N9_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ63"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L23N_T3U_N9_64
+set_property -dict {PACKAGE_PIN BH29 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[62]}] ;
+# set_property PACKAGE_PIN BH29      [get_ports "PL_DDR4_DQ62"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L20P_T3L_N2_AD1P_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ62"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L20P_T3L_N2_AD1P_64
+set_property -dict {PACKAGE_PIN BF32 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[61]}] ;
+# set_property PACKAGE_PIN BF32      [get_ports "PL_DDR4_DQ61"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L23P_T3U_N8_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ61"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L23P_T3U_N8_64
+set_property -dict {PACKAGE_PIN BH31 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[60]}] ;  
+# set_property PACKAGE_PIN BH31      [get_ports "PL_DDR4_DQ60"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L24P_T3U_N10_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ60"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L24P_T3U_N10_64
+set_property -dict {PACKAGE_PIN BG32 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[59]}] ;
+# set_property PACKAGE_PIN BG32      [get_ports "PL_DDR4_DQ59"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L21N_T3L_N5_AD8N_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ59"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L21N_T3L_N5_AD8N_64
+set_property -dict {PACKAGE_PIN BJ31 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[58]}] ;
+# set_property PACKAGE_PIN BJ31      [get_ports "PL_DDR4_DQ58"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L24N_T3U_N11_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ58"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L24N_T3U_N11_64
+set_property -dict {PACKAGE_PIN BH30 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[57]}] ;
+# set_property PACKAGE_PIN BH30      [get_ports "PL_DDR4_DQ57"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L20N_T3L_N3_AD1N_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ57"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L20N_T3L_N3_AD1N_64
+set_property -dict {PACKAGE_PIN BF31 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[56]}] ;
+# set_property PACKAGE_PIN BF31      [get_ports "PL_DDR4_DQ56"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L21P_T3L_N4_AD8P_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ56"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L21P_T3L_N4_AD8P_64
+set_property -dict {PACKAGE_PIN BF36 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[55]}] ;
+# set_property PACKAGE_PIN BF36      [get_ports "PL_DDR4_DQ55"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L17N_T2U_N9_AD10N_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ55"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L17N_T2U_N9_AD10N_64
+set_property -dict {PACKAGE_PIN BG34 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[54]}] ;
+# set_property PACKAGE_PIN BG34      [get_ports "PL_DDR4_DQ54"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L15P_T2L_N4_AD11P_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ54"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L15P_T2L_N4_AD11P_64
+set_property -dict {PACKAGE_PIN BF35 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[53]}] ;
+# set_property PACKAGE_PIN BF35      [get_ports "PL_DDR4_DQ53"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L17P_T2U_N8_AD10P_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ53"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L17P_T2U_N8_AD10P_64
+set_property -dict {PACKAGE_PIN BJ33 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[52]}] ; 
+# set_property PACKAGE_PIN BJ33      [get_ports "PL_DDR4_DQ52"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L14P_T2L_N2_GC_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ52"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L14P_T2L_N2_GC_64
+set_property -dict {PACKAGE_PIN BH35 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[51]}] ;
+# set_property PACKAGE_PIN BH35      [get_ports "PL_DDR4_DQ51"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L18N_T2U_N11_AD2N_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ51"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L18N_T2U_N11_AD2N_64
+set_property -dict {PACKAGE_PIN BH34 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[50]}] ;
+# set_property PACKAGE_PIN BH34      [get_ports "PL_DDR4_DQ50"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L18P_T2U_N10_AD2P_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ50"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L18P_T2U_N10_AD2P_64
+set_property -dict {PACKAGE_PIN BG35 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[49]}] ;
+# set_property PACKAGE_PIN BG35      [get_ports "PL_DDR4_DQ49"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L15N_T2L_N5_AD11N_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ49"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L15N_T2L_N5_AD11N_64
+set_property -dict {PACKAGE_PIN BJ34 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[48]}] ;
+# set_property PACKAGE_PIN BJ34      [get_ports "PL_DDR4_DQ48"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L14N_T2L_N3_GC_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ48"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L14N_T2L_N3_GC_64
+set_property -dict {PACKAGE_PIN BK31 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[47]}] ;
+# set_property PACKAGE_PIN BK31      [get_ports "PL_DDR4_DQ47"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L11P_T1U_N8_GC_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ47"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L11P_T1U_N8_GC_64
+set_property -dict {PACKAGE_PIN BM33 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[46]}] ;
+# set_property PACKAGE_PIN BM33      [get_ports "PL_DDR4_DQ46"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L9N_T1L_N5_AD12N_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ46"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L9N_T1L_N5_AD12N_64
+set_property -dict {PACKAGE_PIN BL33 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[45]}] ;
+# set_property PACKAGE_PIN BL33      [get_ports "PL_DDR4_DQ45"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L12N_T1U_N11_GC_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ45"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L12N_T1U_N11_GC_64
+set_property -dict {PACKAGE_PIN BL31 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[44]}] ;
+# set_property PACKAGE_PIN BL31      [get_ports "PL_DDR4_DQ44"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L11N_T1U_N9_GC_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ44"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L11N_T1U_N9_GC_64
+set_property -dict {PACKAGE_PIN BK33 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[43]}] ;
+# set_property PACKAGE_PIN BK33      [get_ports "PL_DDR4_DQ43"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L12P_T1U_N10_GC_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ43"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L12P_T1U_N10_GC_64
+set_property -dict {PACKAGE_PIN BN34 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[42]}] ;
+# set_property PACKAGE_PIN BN34      [get_ports "PL_DDR4_DQ42"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L8P_T1L_N2_AD5P_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ42"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L8P_T1L_N2_AD5P_64
+set_property -dict {PACKAGE_PIN BP34 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[41]}] ;
+# set_property PACKAGE_PIN BP34      [get_ports "PL_DDR4_DQ41"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L8N_T1L_N3_AD5N_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ41"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L8N_T1L_N3_AD5N_64
+set_property -dict {PACKAGE_PIN BL32 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[40]}] ;
+# set_property PACKAGE_PIN BL32      [get_ports "PL_DDR4_DQ40"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L9P_T1L_N4_AD12P_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ40"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L9P_T1L_N4_AD12P_64
+set_property -dict {PACKAGE_PIN BL30 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[39]}] ;
+# set_property PACKAGE_PIN BL30      [get_ports "PL_DDR4_DQ39"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L5P_T0U_N8_AD14P_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ39"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L5P_T0U_N8_AD14P_64
+set_property -dict {PACKAGE_PIN BN31 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[38]}]
+# set_property PACKAGE_PIN BN31      [get_ports "PL_DDR4_DQ38"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L3P_T0L_N4_AD15P_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ38"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L3P_T0L_N4_AD15P_64
+set_property -dict {PACKAGE_PIN BM30 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[37]}] ;
+# set_property PACKAGE_PIN BM30      [get_ports "PL_DDR4_DQ37"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L5N_T0U_N9_AD14N_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ37"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L5N_T0U_N9_AD14N_64
+set_property -dict {PACKAGE_PIN BN32 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[36]}] ;
+# set_property PACKAGE_PIN BN32      [get_ports "PL_DDR4_DQ36"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L6P_T0U_N10_AD6P_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ36"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L6P_T0U_N10_AD6P_64
+set_property -dict {PACKAGE_PIN BP28 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[35]}] ;
+# set_property PACKAGE_PIN BP28      [get_ports "PL_DDR4_DQ35"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L2P_T0L_N2_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ35"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L2P_T0L_N2_64
+set_property -dict {PACKAGE_PIN BP31 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[34]}] ;
+# set_property PACKAGE_PIN BP31      [get_ports "PL_DDR4_DQ34"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L3N_T0L_N5_AD15N_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ34"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L3N_T0L_N5_AD15N_64
+set_property -dict {PACKAGE_PIN BP29 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[33]}] ;
+# set_property PACKAGE_PIN BP29      [get_ports "PL_DDR4_DQ33"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L2N_T0L_N3_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ33"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L2N_T0L_N3_64
+set_property -dict {PACKAGE_PIN BP32 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[32]}] ;
+# set_property PACKAGE_PIN BP32      [get_ports "PL_DDR4_DQ32"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L6N_T0U_N11_AD6N_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ32"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L6N_T0U_N11_AD6N_64
+set_property -dict {PACKAGE_PIN BF46 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[31]}] ;
+# set_property PACKAGE_PIN BF46      [get_ports "PL_DDR4_DQ31"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L20N_T3L_N3_AD1N_D09_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ31"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L20N_T3L_N3_AD1N_D09_65
+set_property -dict {PACKAGE_PIN BE44 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[30]}] ;
+# set_property PACKAGE_PIN BE44      [get_ports "PL_DDR4_DQ30"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L24N_T3U_N11_DOUT_CSO_B_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ30"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L24N_T3U_N11_DOUT_CSO_B_65
+set_property -dict {PACKAGE_PIN BF45 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[29]}] ;
+# set_property PACKAGE_PIN BF45      [get_ports "PL_DDR4_DQ29"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L20P_T3L_N2_AD1P_D08_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ29"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L20P_T3L_N2_AD1P_D08_65
+set_property -dict {PACKAGE_PIN BD42 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[28]}] ;
+# set_property PACKAGE_PIN BD42      [get_ports "PL_DDR4_DQ28"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L23N_T3U_N9_PERSTN1_I2C_SDA_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ28"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L23N_T3U_N9_PERSTN1_I2C_SDA_65
+set_property -dict {PACKAGE_PIN BF43 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[27]}] ;
+# set_property PACKAGE_PIN BF43      [get_ports "PL_DDR4_DQ27"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L21N_T3L_N5_AD8N_D07_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ27"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L21N_T3L_N5_AD8N_D07_65
+set_property -dict {PACKAGE_PIN BC42 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[26]}] ;
+# set_property PACKAGE_PIN BC42      [get_ports "PL_DDR4_DQ26"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L23P_T3U_N8_I2C_SCLK_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ26"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L23P_T3U_N8_I2C_SCLK_65
+set_property -dict {PACKAGE_PIN BF42 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[25]}] ;
+# set_property PACKAGE_PIN BF42      [get_ports "PL_DDR4_DQ25"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L21P_T3L_N4_AD8P_D06_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ25"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L21P_T3L_N4_AD8P_D06_65
+set_property -dict {PACKAGE_PIN BE43 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[24]}] ;
+# set_property PACKAGE_PIN BE43      [get_ports "PL_DDR4_DQ24"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L24P_T3U_N10_EMCCLK_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ24"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L24P_T3U_N10_EMCCLK_65
+set_property -dict {PACKAGE_PIN BJ41 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[23]}] ;
+# set_property PACKAGE_PIN BJ41      [get_ports "PL_DDR4_DQ23"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L15P_T2L_N4_AD11P_A02_D18_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ23"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L15P_T2L_N4_AD11P_A02_D18_65
+set_property -dict {PACKAGE_PIN BG43 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[22]}] ;
+# set_property PACKAGE_PIN BG43      [get_ports "PL_DDR4_DQ22"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L17N_T2U_N9_AD10N_D15_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ22"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L17N_T2U_N9_AD10N_D15_65
+set_property -dict {PACKAGE_PIN BG45 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[21]}] ;
+# set_property PACKAGE_PIN BG45      [get_ports "PL_DDR4_DQ21"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L18N_T2U_N11_AD2N_D13_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ21"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L18N_T2U_N11_AD2N_D13_65
+set_property -dict {PACKAGE_PIN BH45 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[20]}] ;
+# set_property PACKAGE_PIN BH45      [get_ports "PL_DDR4_DQ20"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L14N_T2L_N3_GC_A05_D21_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ20"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L14N_T2L_N3_GC_A05_D21_65
+set_property -dict {PACKAGE_PIN BH44 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[19]}] ;
+# set_property PACKAGE_PIN BH44      [get_ports "PL_DDR4_DQ19"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L14P_T2L_N2_GC_A04_D20_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ19"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L14P_T2L_N2_GC_A04_D20_65
+set_property -dict {PACKAGE_PIN BG42 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[18]}] ;
+# set_property PACKAGE_PIN BG42      [get_ports "PL_DDR4_DQ18"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L17P_T2U_N8_AD10P_D14_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ18"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L17P_T2U_N8_AD10P_D14_65
+set_property -dict {PACKAGE_PIN BG44 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[17]}] ;
+# set_property PACKAGE_PIN BG44      [get_ports "PL_DDR4_DQ17"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L18P_T2U_N10_AD2P_D12_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ17"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L18P_T2U_N10_AD2P_D12_65
+set_property -dict {PACKAGE_PIN BK41 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[16]}] ;
+# set_property PACKAGE_PIN BK41      [get_ports "PL_DDR4_DQ16"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L15N_T2L_N5_AD11N_A03_D19_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ16"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L15N_T2L_N5_AD11N_A03_D19_65
+set_property -dict {PACKAGE_PIN BJ43 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[15]}] ;
+# set_property PACKAGE_PIN BJ43      [get_ports "PL_DDR4_DQ15"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L12P_T1U_N10_GC_A08_D24_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ15"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L12P_T1U_N10_GC_A08_D24_65
+set_property -dict {PACKAGE_PIN BL42 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[14]}] ;
+# set_property PACKAGE_PIN BL42      [get_ports "PL_DDR4_DQ14"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L9P_T1L_N4_AD12P_A14_D30_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ14"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L9P_T1L_N4_AD12P_A14_D30_65
+set_property -dict {PACKAGE_PIN BJ44 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[13]}] ;
+# set_property PACKAGE_PIN BJ44      [get_ports "PL_DDR4_DQ13"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L12N_T1U_N11_GC_A09_D25_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ13"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L12N_T1U_N11_GC_A09_D25_65
+set_property -dict {PACKAGE_PIN BL43 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[12]}] ;
+# set_property PACKAGE_PIN BL43      [get_ports "PL_DDR4_DQ12"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L9N_T1L_N5_AD12N_A15_D31_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ12"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L9N_T1L_N5_AD12N_A15_D31_65
+set_property -dict {PACKAGE_PIN BK43 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[11]}] ;
+# set_property PACKAGE_PIN BK43      [get_ports "PL_DDR4_DQ11"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L11P_T1U_N8_GC_A10_D26_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ11"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L11P_T1U_N8_GC_A10_D26_65
+set_property -dict {PACKAGE_PIN BL46 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[10]}] ;
+# set_property PACKAGE_PIN BL46      [get_ports "PL_DDR4_DQ10"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L8N_T1L_N3_AD5N_A17_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ10"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L8N_T1L_N3_AD5N_A17_65
+set_property -dict {PACKAGE_PIN BK44 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[9]}] ;
+# set_property PACKAGE_PIN BK44      [get_ports "PL_DDR4_DQ9"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L11N_T1U_N9_GC_A11_D27_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ9"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L11N_T1U_N9_GC_A11_D27_65
+set_property -dict {PACKAGE_PIN BL45 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[8]}] ;
+# set_property PACKAGE_PIN BL45      [get_ports "PL_DDR4_DQ8"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L8P_T1L_N2_AD5P_A16_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ8"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L8P_T1L_N2_AD5P_A16_65
+set_property -dict {PACKAGE_PIN BP43 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[7]}] ;
+# set_property PACKAGE_PIN BP43      [get_ports "PL_DDR4_DQ7"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L3P_T0L_N4_AD15P_A26_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ7"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L3P_T0L_N4_AD15P_A26_65
+set_property -dict {PACKAGE_PIN BN47 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[6]}] ;
+# set_property PACKAGE_PIN BN47      [get_ports "PL_DDR4_DQ6"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L2P_T0L_N2_FOE_B_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ6"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L2P_T0L_N2_FOE_B_65
+set_property -dict {PACKAGE_PIN BN44 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[5]}] ;
+# set_property PACKAGE_PIN BN44      [get_ports "PL_DDR4_DQ5"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L5N_T0U_N9_AD14N_A23_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ5"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L5N_T0U_N9_AD14N_A23_65
+set_property -dict {PACKAGE_PIN BM44 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[4]}] ;
+# set_property PACKAGE_PIN BM44      [get_ports "PL_DDR4_DQ4"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L5P_T0U_N8_AD14P_A22_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ4"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L5P_T0U_N8_AD14P_A22_65
+set_property -dict {PACKAGE_PIN BN45 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[3]}] ;
+# set_property PACKAGE_PIN BN45      [get_ports "PL_DDR4_DQ3"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L6N_T0U_N11_AD6N_A21_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ3"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L6N_T0U_N11_AD6N_A21_65
+set_property -dict {PACKAGE_PIN BP47 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[2]}] ;
+# set_property PACKAGE_PIN BP47      [get_ports "PL_DDR4_DQ2"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L2N_T0L_N3_FWE_FCS2_B_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ2"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L2N_T0L_N3_FWE_FCS2_B_65
+set_property -dict {PACKAGE_PIN BP44 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[1]}] ;
+# set_property PACKAGE_PIN BP44      [get_ports "PL_DDR4_DQ1"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L3N_T0L_N5_AD15N_A27_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ1"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L3N_T0L_N5_AD15N_A27_65
+set_property -dict {PACKAGE_PIN BM45 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dq[0]}] ;
+# set_property PACKAGE_PIN BM45      [get_ports "PL_DDR4_DQ0"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L6P_T0U_N10_AD6P_A20_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DQ0"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L6P_T0U_N10_AD6P_A20_65
+
+						# c0_ddr4_odt
+set_property -dict {PACKAGE_PIN BH49 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_odt}] ;
+# set_property PACKAGE_PIN BH49       [get_ports "PL_DDR4_ODT"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L12P_T1U_N10_GC_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_ODT"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L12P_T1U_N10_GC_66
+
+						# c0_ddr4_bg
+set_property -dict {PACKAGE_PIN BG54 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_bg}] ;
+# set_property PACKAGE_PIN BG54       [get_ports "PL_DDR4_BG0"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L17N_T2U_N9_AD10N_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_BG0"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L17N_T2U_N9_AD10N_66
+
+						# c0_ddr4_act_n
+set_property -dict {PACKAGE_PIN BG52 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_act_n}] ;
+# set_property PACKAGE_PIN BG52       [get_ports "PL_DDR4_ACT_B"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L14P_T2L_N2_GC_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_ACT_B"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L14P_T2L_N2_GC_66
+
+						# c0_ddr4_ck_c
+set_property -dict {PACKAGE_PIN BK54 IOSTANDARD DIFF_SSTL12_DCI} [get_ports {c0_ddr4_ck_c}] ;
+# set_property PACKAGE_PIN BK54            [get_ports "PL_DDR4_CK0_C"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L15N_T2L_N5_AD11N_66
+# set_property IOSTANDARD  DIFF_SSTL12_DCI [get_ports "PL_DDR4_CK0_C"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L15N_T2L_N5_AD11N_66
+
+						# c0_ddr4_ck_t
+set_property -dict {PACKAGE_PIN BK53 IOSTANDARD DIFF_SSTL12_DCI} [get_ports {c0_ddr4_ck_t}] ;
+# set_property PACKAGE_PIN BK53            [get_ports "PL_DDR4_CK0_T"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L15P_T2L_N4_AD11P_66
+# set_property IOSTANDARD  DIFF_SSTL12_DCI [get_ports "PL_DDR4_CK0_T"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L15P_T2L_N4_AD11P_66
+
+						# c0_ddr4_dm_dbi_n
+set_property -dict {PACKAGE_PIN BG29 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dm_dbi_n[7]}] ;
+# set_property PACKAGE_PIN BG29      [get_ports "PL_DDR4_DM7_B"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L19P_T3L_N0_DBC_AD9P_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DM7_B"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L19P_T3L_N0_DBC_AD9P_64
+set_property -dict {PACKAGE_PIN BH32 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dm_dbi_n[6]}] ;
+# set_property PACKAGE_PIN BH32      [get_ports "PL_DDR4_DM6_B"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L13P_T2L_N0_GC_QBC_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DM6_B"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L13P_T2L_N0_GC_QBC_64
+set_property -dict {PACKAGE_PIN BM34 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dm_dbi_n[5]}] ;
+# set_property PACKAGE_PIN BM34      [get_ports "PL_DDR4_DM5_B"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L7P_T1L_N0_QBC_AD13P_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DM5_B"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L7P_T1L_N0_QBC_AD13P_64
+set_property -dict {PACKAGE_PIN BM28 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dm_dbi_n[4]}] ;
+# set_property PACKAGE_PIN BM28      [get_ports "PL_DDR4_DM4_B"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L1P_T0L_N0_DBC_64
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DM4_B"] ;# Bank  64 VCCO - DDR4_VDDQ_1V2 - IO_L1P_T0L_N0_DBC_64
+set_property -dict {PACKAGE_PIN BD41 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dm_dbi_n[3]}] ;
+# set_property PACKAGE_PIN BD41      [get_ports "PL_DDR4_DM3_B"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L19P_T3L_N0_DBC_AD9P_D10_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DM3_B"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L19P_T3L_N0_DBC_AD9P_D10_65
+set_property -dict {PACKAGE_PIN BH42 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dm_dbi_n[2]}] ;
+# set_property PACKAGE_PIN BH42      [get_ports "PL_DDR4_DM2_B"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L13P_T2L_N0_GC_QBC_A06_D22_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DM2_B"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L13P_T2L_N0_GC_QBC_A06_D22_65
+set_property -dict {PACKAGE_PIN BL47 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dm_dbi_n[1]}] ;
+# set_property PACKAGE_PIN BL47      [get_ports "PL_DDR4_DM1_B"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L7P_T1L_N0_QBC_AD13P_A18_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DM1_B"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L7P_T1L_N0_QBC_AD13P_A18_65
+set_property -dict {PACKAGE_PIN BN42 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_dm_dbi_n[0]}] ;
+# set_property PACKAGE_PIN BN42      [get_ports "PL_DDR4_DM0_B"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L1P_T0L_N0_DBC_RS0_65
+# set_property IOSTANDARD  POD12_DCI [get_ports "PL_DDR4_DM0_B"] ;# Bank  65 VCCO - DDR4_VDDQ_1V2 - IO_L1P_T0L_N0_DBC_RS0_65
+
+						# c0_ddr4_cs_n
+set_property -dict {PACKAGE_PIN BP49 IOSTANDARD SSTL12} [get_ports {c0_ddr4_cs_n}] ;
+# set_property PACKAGE_PIN BP49     [get_ports "PL_DDR4_CS_B"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L1N_T0L_N1_DBC_66
+# set_property IOSTANDARD  SSTL12   [get_ports "PL_DDR4_CS_B"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L1N_T0L_N1_DBC_66
+
+						# c0_ddr4_reset_n
+set_property -dict {PACKAGE_PIN BH50 IOSTANDARD LVCMOS12} [get_ports {c0_ddr4_reset_n}] ;
+# set_property PACKAGE_PIN BH50     [get_ports "PL_DDR4_RESET_B"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L12N_T1U_N11_GC_66
+# set_property IOSTANDARD  LVCMOS12 [get_ports "PL_DDR4_RESET_B"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L12N_T1U_N11_GC_66
+
+						# c0_ddr4_adr
+set_property -dict {PACKAGE_PIN BF52 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_adr[13]}] ;
+# set_property PACKAGE_PIN BF52       [get_ports "PL_DDR4_A13"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L21N_T3L_N5_AD8N_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_A13"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L21N_T3L_N5_AD8N_66
+set_property -dict {PACKAGE_PIN BF48 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_adr[12]}] ;
+# set_property PACKAGE_PIN BF48       [get_ports "PL_DDR4_A12"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L22N_T3U_N7_DBC_AD0N_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_A12"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L22N_T3U_N7_DBC_AD0N_66
+set_property -dict {PACKAGE_PIN BG49 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_adr[11]}] ;
+# set_property PACKAGE_PIN BG49       [get_ports "PL_DDR4_A11"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L19N_T3L_N1_DBC_AD9N_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_A11"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L19N_T3L_N1_DBC_AD9N_66
+set_property -dict {PACKAGE_PIN BF47 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_adr[10]}] ;
+# set_property PACKAGE_PIN BF47       [get_ports "PL_DDR4_A10"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L22P_T3U_N6_DBC_AD0P_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_A10"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L22P_T3U_N6_DBC_AD0P_66
+set_property -dict {PACKAGE_PIN BG47 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_adr[9]}] ;
+# set_property PACKAGE_PIN BG47       [get_ports "PL_DDR4_A9"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_T3U_N12_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_A9"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_T3U_N12_66
+set_property -dict {PACKAGE_PIN BF51 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_adr[8]}] ;
+# set_property PACKAGE_PIN BF51       [get_ports "PL_DDR4_A8"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L21P_T3L_N4_AD8P_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_A8"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L21P_T3L_N4_AD8P_66
+set_property -dict {PACKAGE_PIN BG50 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_adr[7]}] ;
+# set_property PACKAGE_PIN BG50       [get_ports "PL_DDR4_A7"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L20N_T3L_N3_AD1N_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_A7"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L20N_T3L_N3_AD1N_66
+set_property -dict {PACKAGE_PIN BF53 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_adr[6]}] ;
+# set_property PACKAGE_PIN BF53       [get_ports "PL_DDR4_A6"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_T2U_N12_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_A6"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_T2U_N12_66
+set_property -dict {PACKAGE_PIN BE51 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_adr[5]}] ;
+# set_property PACKAGE_PIN BE51       [get_ports "PL_DDR4_A5"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L24N_T3U_N11_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_A5"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L24N_T3U_N11_66
+set_property -dict {PACKAGE_PIN BE49 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_adr[4]}] ;
+# set_property PACKAGE_PIN BE49       [get_ports "PL_DDR4_A4"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L23P_T3U_N8_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_A4"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L23P_T3U_N8_66
+set_property -dict {PACKAGE_PIN BE50 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_adr[3]}] ;
+# set_property PACKAGE_PIN BE50       [get_ports "PL_DDR4_A3"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L23N_T3U_N9_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_A3"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L23N_T3U_N9_66
+set_property -dict {PACKAGE_PIN BG48 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_adr[2]}] ;
+# set_property PACKAGE_PIN BG48       [get_ports "PL_DDR4_A2"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L19P_T3L_N0_DBC_AD9P_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_A2"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L19P_T3L_N0_DBC_AD9P_66
+set_property -dict {PACKAGE_PIN BD51 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_adr[1]}] ;
+# set_property PACKAGE_PIN BD51       [get_ports "PL_DDR4_A1"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L24P_T3U_N10_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_A1"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L24P_T3U_N10_66
+set_property -dict {PACKAGE_PIN BF50 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_adr[0]}] ;
+# set_property PACKAGE_PIN BF50       [get_ports "PL_DDR4_A0"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L20P_T3L_N2_AD1P_66
+# set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_A0"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L20P_T3L_N2_AD1P_66
+
+
+# ETHERNET
+set_property -dict {PACKAGE_PIN BG22 IOSTANDARD LVDS} [get_ports eth_sgmii_tx_p] ;
 # set_property PACKAGE_PIN BG22     [get_ports "ENET_SGMII_IN_P"] ;# Bank  67 VCCO - VCC1V8   - IO_L23P_T3U_N8_67
 # set_property IOSTANDARD  LVDS     [get_ports "ENET_SGMII_IN_P"] ;# Bank  67 VCCO - VCC1V8   - IO_L23P_T3U_N8_67
-set_property -dict {PACKAGE_PIN BH22 IOSTANDARD LVDS} [get_ports eth_sgmii_tx_n]
+set_property -dict {PACKAGE_PIN BH22 IOSTANDARD LVDS} [get_ports eth_sgmii_tx_n] ;
 # set_property PACKAGE_PIN BH22     [get_ports "ENET_SGMII_IN_N"] ;# Bank  67 VCCO - VCC1V8   - IO_L23N_T3U_N9_67
 # set_property IOSTANDARD  LVDS     [get_ports "ENET_SGMII_IN_N"] ;# Bank  67 VCCO - VCC1V8   - IO_L23N_T3U_N9_67
-set_property -dict {PACKAGE_PIN BJ22 IOSTANDARD LVDS} [get_ports eth_sgmii_rx_p]
+set_property -dict {PACKAGE_PIN BJ22 IOSTANDARD LVDS} [get_ports eth_sgmii_rx_p] ;
 # set_property PACKAGE_PIN BJ22     [get_ports "ENET_SGMII_OUT_P"] ;# Bank  67 VCCO - VCC1V8   - IO_L21P_T3L_N4_AD8P_67
 # set_property IOSTANDARD  LVDS     [get_ports "ENET_SGMII_OUT_P"] ;# Bank  67 VCCO - VCC1V8   - IO_L21P_T3L_N4_AD8P_67
-set_property -dict {PACKAGE_PIN BK21 IOSTANDARD LVDS} [get_ports eth_sgmii_rx_n]
+set_property -dict {PACKAGE_PIN BK21 IOSTANDARD LVDS} [get_ports eth_sgmii_rx_n] ;
 # set_property PACKAGE_PIN BK21     [get_ports "ENET_SGMII_OUT_N"] ;# Bank  67 VCCO - VCC1V8   - IO_L21N_T3L_N5_AD8N_67
 # set_property IOSTANDARD  LVDS     [get_ports "ENET_SGMII_OUT_N"] ;# Bank  67 VCCO - VCC1V8   - IO_L21N_T3L_N5_AD8N_67
-set_property -dict {PACKAGE_PIN BH27 IOSTANDARD LVDS} [get_ports eth_sgmii_rxck_p]
+set_property -dict {PACKAGE_PIN BH27 IOSTANDARD LVDS} [get_ports eth_sgmii_rxck_p] ;
 # set_property PACKAGE_PIN BH27     [get_ports "ENET_SGMII_CLK_P"] ;# Bank  67 VCCO - VCC1V8   - IO_L12P_T1U_N10_GC_67
 # set_property IOSTANDARD  LVDS     [get_ports "ENET_SGMII_CLK_P"] ;# Bank  67 VCCO - VCC1V8   - IO_L12P_T1U_N10_GC_67
-set_property -dict {PACKAGE_PIN BJ27 IOSTANDARD LVDS} [get_ports eth_sgmii_rxck_n]
+set_property -dict {PACKAGE_PIN BJ27 IOSTANDARD LVDS} [get_ports eth_sgmii_rxck_n] ;
 # set_property PACKAGE_PIN BJ27     [get_ports "ENET_SGMII_CLK_N"] ;# Bank  67 VCCO - VCC1V8   - IO_L12N_T1U_N11_GC_67
 # set_property IOSTANDARD  LVDS     [get_ports "ENET_SGMII_CLK_N"] ;# Bank  67 VCCO - VCC1V8   - IO_L12N_T1U_N11_GC_67
-set_property -dict {PACKAGE_PIN BG23 IOSTANDARD LVCMOS18} [get_ports eth_mdio]
+set_property -dict {PACKAGE_PIN BG23 IOSTANDARD LVCMOS18} [get_ports eth_mdio] ;
 # set_property PACKAGE_PIN BG23     [get_ports "ENET_MDIO"] ;# Bank  67 VCCO - VCC1V8   - IO_T3U_N12_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "ENET_MDIO"] ;# Bank  67 VCCO - VCC1V8   - IO_T3U_N12_67
-set_property -dict {PACKAGE_PIN BN27 IOSTANDARD LVCMOS18} [get_ports eth_mdc]
+set_property -dict {PACKAGE_PIN BN27 IOSTANDARD LVCMOS18} [get_ports eth_mdc] ;
 # set_property PACKAGE_PIN BN27     [get_ports "ENET_MDC"] ;# Bank  67 VCCO - VCC1V8   - IO_T1U_N12_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "ENET_MDC"] ;# Bank  67 VCCO - VCC1V8   - IO_T1U_N12_67
-set_property -dict {PACKAGE_PIN BF22 IOSTANDARD LVCMOS18 PULLUP true} [get_ports eth_int_n]
+set_property -dict {PACKAGE_PIN BF22 IOSTANDARD LVCMOS18 PULLUP true} [get_ports eth_int_n] ;
 # set_property PACKAGE_PIN BF22     [get_ports "ENET_PDWN_B_I_INT_B_O"] ;# Bank  67 VCCO - VCC1V8   - IO_L24P_T3U_N10_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "ENET_PDWN_B_I_INT_B_O"] ;# Bank  67 VCCO - VCC1V8   - IO_L24P_T3U_N10_67
 #set_property -dict {PACKAGE_PIN XXXX IOSTANDARD LVCMOS18} [get_ports eth_rst_n]
