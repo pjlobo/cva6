@@ -10,9 +10,10 @@
 
 // Description: Xilinx FPGA top-level
 // Author: Florian Zaruba <zarubaf@iis.ee.ethz.ch>
-
 //
 // Modified by: Pedro Lobo <pedro.lobo@upm.es>
+
+`include "axi/typedef.svh"
 
 `ifdef GENESYSII
  `define ARIANE_XILINX_ETH_RGMII
