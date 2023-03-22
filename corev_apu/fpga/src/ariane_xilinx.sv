@@ -30,10 +30,16 @@
 `elsif VCU118
  `define ARIANE_XILINX_ETH_SGMII
  `define ARIANE_XILINX_MEM_DDR4
+ `define ARIANE_XILINX_MEM_DDR4_DQ_WIDTH 64
+ `define ARIANE_XILINX_MEM_DDR4_DQS_WIDTH 8
+ `define ARIANE_XILINX_MEM_DDR4_CS_WIDTH 1
  `define ARIANE_XILINX_CPU_RESET_ACTIVE_HIGH
 `elsif VCU128
  `define ARIANE_XILINX_ETH_SGMII
  `define ARIANE_XILINX_MEM_DDR4
+ `define ARIANE_XILINX_MEM_DDR4_DQ_WIDTH 72
+ `define ARIANE_XILINX_MEM_DDR4_DQS_WIDTH 9
+ `define ARIANE_XILINX_MEM_DDR4_CS_WIDTH 2
  `define ARIANE_XILINX_CPU_RESET_ACTIVE_HIGH
 `else
  // This is *not* valid SystemVerilog and will trigger a syntax error but it
@@ -117,16 +123,16 @@ module ariane_xilinx (
   output logic [ 0:0]  ddr3_odt    ,
 `endif //  `ifdef ARIANE_XILINX_MEM_DDR3
 `ifdef ARIANE_XILINX_MEM_DDR4
-  input  wire          c0_sys_clk_p    ,  // 250 MHz Clock for DDR
-  input  wire          c0_sys_clk_n    ,  // 250 MHz Clock for DDR
+  input  wire          c0_sys_clk_p    ,
+  input  wire          c0_sys_clk_n    ,
   output wire [16:0]   c0_ddr4_adr     ,
   output wire [1:0]    c0_ddr4_ba      ,
   output wire [0:0]    c0_ddr4_cke     ,
-  output wire [0:0]    c0_ddr4_cs_n    ,
-  inout  wire [7:0]    c0_ddr4_dm_dbi_n,
-  inout  wire [63:0]   c0_ddr4_dq      ,
-  inout  wire [7:0]    c0_ddr4_dqs_c   ,
-  inout  wire [7:0]    c0_ddr4_dqs_t   ,
+  output wire [`ARIANE_XILINX_MEM_DDR4_CS_WIDTH-1:0]   c0_ddr4_cs_n    ,
+  inout  wire [`ARIANE_XILINX_MEM_DDR4_DQS_WIDTH-1:0]  c0_ddr4_dm_dbi_n,
+  inout  wire [`ARIANE_XILINX_MEM_DDR4_DQ_WIDTH-1:0]   c0_ddr4_dq      ,
+  inout  wire [`ARIANE_XILINX_MEM_DDR4_DQS_WIDTH-1:0]  c0_ddr4_dqs_c   ,
+  inout  wire [`ARIANE_XILINX_MEM_DDR4_DQS_WIDTH-1:0]  c0_ddr4_dqs_t   ,
   output wire [0:0]    c0_ddr4_odt     ,
   output wire [0:0]    c0_ddr4_bg      ,
   output wire          c0_ddr4_reset_n ,
