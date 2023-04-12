@@ -40,8 +40,8 @@ module ariane_peripherals #(
     input  logic       rx_i            ,
     output logic       tx_o            ,
     // Ethernet
-`ifdef ARIANE_XILINX_ETH_RGMII
     input  logic       eth_clk_i       ,
+`ifdef ARIANE_XILINX_ETH_RGMII
     input  wire        eth_rxck        ,
     input  wire        eth_rxctl       ,
     input  wire [3:0]  eth_rxd         ,
