@@ -9,7 +9,7 @@ set_property board_part $boardName [current_project]
 
 create_ip -name ddr4 -vendor xilinx.com -library ip -version 2.2 -module_name $ipName
 
-if {boardNameShort eq "vcu128"} {
+if {$boardNameShort eq "vcu128"} {
   set_property -dict [list CONFIG.C0_CLOCK_BOARD_INTERFACE {default_100mhz_clk} CONFIG.C0.DDR4_Clamshell {true} CONFIG.C0_DDR4_BOARD_INTERFACE {ddr4_sdram} CONFIG.C0.DDR4_InputClockPeriod {10000} CONFIG.C0.DDR4_CLKOUT0_DIVIDE {3} CONFIG.C0.DDR4_MemoryPart {MT40A512M16HA-075E} CONFIG.C0.DDR4_DataWidth {72} CONFIG.C0.DDR4_DataMask {NO_DM_NO_DBI} CONFIG.C0.DDR4_Ecc {true} CONFIG.C0.DDR4_AxiSelection {true} CONFIG.C0.DDR4_AxiDataWidth {512} CONFIG.ADDN_UI_CLKOUT1_FREQ_HZ {100} CONFIG.C0.BANK_GROUP_WIDTH {1} CONFIG.C0.CS_WIDTH {2}] [get_ips $ipName]
 } else {
   puts "ERROR: unknown board, boardName = $boardName, boardNameShort = $boardNameShort\n"
