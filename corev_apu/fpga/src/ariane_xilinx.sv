@@ -813,6 +813,8 @@ end
 `ifdef KC705
   logic [7:0] unused_led;
   logic [3:0] unused_switches = 4'b0000;
+`elif VCU128
+  logic [7:0] unused_switches = 8'b00000000;
 `endif
 
 ariane_peripherals #(
@@ -884,6 +886,9 @@ ariane_peripherals #(
     `ifdef KC705
       .leds_o         ( {led[3:0], unused_led[7:4]}),
       .dip_switches_i ( {sw, unused_switches}     )
+    `elif VCU128
+      .leds_o         ( led                       ),
+      .dip_switches_i ( unused_switches           )
     `else
       .leds_o         ( led                       ),
       .dip_switches_i ( sw                        )
