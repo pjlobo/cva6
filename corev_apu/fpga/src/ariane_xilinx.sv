@@ -60,7 +60,6 @@ module ariane_xilinx (
 `elsif KC705
   input  logic         sys_clk_p   ,
   input  logic         sys_clk_n   ,
-  input  logic         cpu_reset   ,
 
   output logic [ 3:0]  led         ,
   input  logic [ 3:0]  sw          ,
@@ -69,7 +68,6 @@ module ariane_xilinx (
 `elsif VC707
   input  logic         sys_clk_p   ,
   input  logic         sys_clk_n   ,
-  input  logic         cpu_reset   ,
 
   output logic [ 7:0]  led         ,
   input  logic [ 7:0]  sw          ,
@@ -79,7 +77,6 @@ module ariane_xilinx (
   input  wire          sys_clk_p       ,  // 100 MHz Clock for PCIe
   input  wire          sys_clk_n       ,  // 100 MHz Clock for PCIE
   input  wire          sys_rst_n       ,  // PCIe Reset
-  input  logic         cpu_reset       ,  // CPU subsystem reset
   output wire [7:0]    pci_exp_txp     ,
   output wire [7:0]    pci_exp_txn     ,
   input  wire [7:0]    pci_exp_rxp     ,
@@ -89,7 +86,6 @@ module ariane_xilinx (
   input  wire          sys_clk_p       ,  // 100 MHz Clock for PCIe
   input  wire          sys_clk_n       ,  // 100 MHz Clock for PCIE
   input  wire          sys_rst_n       ,  // PCIe Reset
-  input  logic         cpu_reset       ,  // CPU subsystem reset
   //output wire [7:0]    pci_exp_txp     , // XXX Disabled for now
   //output wire [7:0]    pci_exp_txn     ,
   //input  wire [7:0]    pci_exp_rxp     ,
