@@ -13,6 +13,8 @@
 `include "register_interface/assign.svh"
 `include "register_interface/typedef.svh"
 
+`include "xilinx-boards.svh"
+
 module ariane_peripherals #(
     parameter int AxiAddrWidth = -1,
     parameter int AxiDataWidth = -1,
