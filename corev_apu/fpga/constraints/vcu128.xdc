@@ -394,10 +394,10 @@ set_property -dict {PACKAGE_PIN BN42 IOSTANDARD POD12_DCI} [get_ports {c0_ddr4_d
 						# c0_ddr4_cs_n
 # This Xilinx support answer says the connection is this way([1] -> DDR4_BOT_CS_B, [0] -> DDR4_CS_B):
 # https://support.xilinx.com/s/question/0D52E00006hplJSSAY/vcu128-ddr4-memory-ip-troubleshoot-in-vivado-20183?language=en_US
-set_property -dict {PACKAGE_PIN BK48 IOSTANDARD SSTL12} [get_ports {c0_ddr4_cs_n[1]}] ;
+set_property -dict {PACKAGE_PIN BK48 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_cs_n[1]}] ;
 # set_property PACKAGE_PIN BK48       [get_ports "PL_DDR4_BOT_CS_B"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L7P_T1L_N0_QBC_AD13P_66
 # set_property IOSTANDARD  SSTL12_DCI [get_ports "PL_DDR4_BOT_CS_B"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L7P_T1L_N0_QBC_AD13P_66
-set_property -dict {PACKAGE_PIN BP49 IOSTANDARD SSTL12} [get_ports {c0_ddr4_cs_n[0]}] ;
+set_property -dict {PACKAGE_PIN BP49 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_cs_n[0]}] ;
 # set_property PACKAGE_PIN BP49     [get_ports "PL_DDR4_CS_B"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L1N_T0L_N1_DBC_66
 # set_property IOSTANDARD  SSTL12   [get_ports "PL_DDR4_CS_B"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L1N_T0L_N1_DBC_66
 
