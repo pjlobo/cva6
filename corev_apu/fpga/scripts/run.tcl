@@ -40,7 +40,10 @@ read_ip { \
 if {$::env(BOARD) eq "genesys2" || $::env(BOARD) eq "kc705" || $::env(BOARD) eq "vc707"} {
     read_ip "xilinx/xlnx_mig_7_ddr3/xlnx_mig_7_ddr3.srcs/sources_1/ip/xlnx_mig_7_ddr3/xlnx_mig_7_ddr3.xci"
 } elseif {$::env(BOARD) eq "vcu118" || $::env(BOARD) eq "vcu128"} {
-    read_ip "xilinx/xlnx_ddr4/xlnx_ddr4.srcs/sources_1/ip/xlnx_ddr4/xlnx_ddr4.xci"
+    read_ip { \
+          "xilinx/xlnx_ddr4/xlnx_ddr4.srcs/sources_1/ip/xlnx_ddr4/xlnx_ddr4.xci" \
+           "xilinx/axi_dwidth_converter_512_64/axi_dwidth_converter_512_64.srcs/sources_1/ip/axi_dwidth_converter_512_64/axi_dwidth_converter_512_64.xci" \
+           }
 }
 # read_ip xilinx/xlnx_protocol_checker/ip/xlnx_protocol_checker.xci
 
