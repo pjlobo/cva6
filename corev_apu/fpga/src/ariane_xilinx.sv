@@ -1291,7 +1291,7 @@ axi_dwidth_converter_512_64 i_axi_dwidth_converter_512_64 (
   .m_axi_rready   ( dram_dwidth_axi_rready   )
 );
 
-  ddr4_0 i_ddr (
+  xlnx_ddr4 i_ddr (
     .c0_init_calib_complete (                              ),
     .dbg_clk                (                              ),
     .c0_sys_clk_p           ( c0_sys_clk_p                 ),
