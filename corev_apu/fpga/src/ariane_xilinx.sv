@@ -1351,6 +1351,16 @@ axi_dwidth_converter_512_64 i_axi_dwidth_converter_512_64 (
     .c0_ddr4_s_axi_rresp    ( dram_dwidth_axi_rresp        ),
     .c0_ddr4_s_axi_rid      (                              ),
     .c0_ddr4_s_axi_rdata    ( dram_dwidth_axi_rdata        ),
+
+    .c0_ddr4_s_axi_ctrl_awvalid ( '0),
+    .c0_ddr4_s_axi_ctrl_awaddr  ( '0),
+    .c0_ddr4_s_axi_ctrl_wvalid  ( '0),
+    .c0_ddr4_s_axi_ctrl_wdata   ( '0),
+    .c0_ddr4_s_axi_ctrl_bready  ( '0),
+    .c0_ddr4_s_axi_ctrl_arvalid ( '0),
+    .c0_ddr4_s_axi_ctrl_araddr  ( '0),
+    .c0_ddr4_s_axi_ctrl_rready  ( '0),
+
     .sys_rst                ( cpu_reset                    )
   );
 
