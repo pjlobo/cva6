@@ -22,28 +22,28 @@ set_property -dict {PACKAGE_PIN BN26 IOSTANDARD  LVCMOS18}  [get_ports tx] ;
 # set_property IOSTANDARD  LVCMOS18 [get_ports "UART0_TXD"] ;# Bank  67 VCCO - VCC1V8   - IO_L2P_T0L_N2_67
 
 # LEDs
-set_property -dict {PACKAGE_PIN BG28 IOSTANDARD LVCMOS18} [get_ports {leds[7]}] ;
+set_property -dict {PACKAGE_PIN BG28 IOSTANDARD LVCMOS18} [get_ports {led[7]}] ;
 # set_property PACKAGE_PIN BG28     [get_ports "GPIO_LED_7_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L15P_T2L_N4_AD11P_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "GPIO_LED_7_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L15P_T2L_N4_AD11P_67
-set_property -dict {PACKAGE_PIN BG27 IOSTANDARD LVCMOS18} [get_ports {leds[6]}] ;
+set_property -dict {PACKAGE_PIN BG27 IOSTANDARD LVCMOS18} [get_ports {led[6]}] ;
 # set_property PACKAGE_PIN BG27     [get_ports "GPIO_LED_6_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L15N_T2L_N5_AD11N_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "GPIO_LED_6_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L15N_T2L_N5_AD11N_67
-set_property -dict {PACKAGE_PIN BF27 IOSTANDARD LVCMOS18} [get_ports {leds[5]}] ;
+set_property -dict {PACKAGE_PIN BF27 IOSTANDARD LVCMOS18} [get_ports {led[5]}] ;
 # set_property PACKAGE_PIN BF27     [get_ports "GPIO_LED_5_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L16P_T2U_N6_QBC_AD3P_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "GPIO_LED_5_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L16P_T2U_N6_QBC_AD3P_67
-set_property -dict {PACKAGE_PIN BF26 IOSTANDARD LVCMOS18} [get_ports {leds[4]}] ;
+set_property -dict {PACKAGE_PIN BF26 IOSTANDARD LVCMOS18} [get_ports {led[4]}] ;
 # set_property PACKAGE_PIN BF26     [get_ports "GPIO_LED_4_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L16N_T2U_N7_QBC_AD3N_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "GPIO_LED_4_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L16N_T2U_N7_QBC_AD3N_67
-set_property -dict {PACKAGE_PIN BF25 IOSTANDARD LVCMOS18} [get_ports {leds[3]}] ;
+set_property -dict {PACKAGE_PIN BF25 IOSTANDARD LVCMOS18} [get_ports {led[3]}] ;
 # set_property PACKAGE_PIN BF25     [get_ports "GPIO_LED_3_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L17P_T2U_N8_AD10P_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "GPIO_LED_3_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L17P_T2U_N8_AD10P_67
-set_property -dict {PACKAGE_PIN BG25 IOSTANDARD LVCMOS18} [get_ports {leds[2]}] ;
+set_property -dict {PACKAGE_PIN BG25 IOSTANDARD LVCMOS18} [get_ports {led[2]}] ;
 # set_property PACKAGE_PIN BG25     [get_ports "GPIO_LED_2_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L17N_T2U_N9_AD10N_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "GPIO_LED_2_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L17N_T2U_N9_AD10N_67
-set_property -dict {PACKAGE_PIN BG24 IOSTANDARD LVCMOS18} [get_ports {leds[1]}] ;
+set_property -dict {PACKAGE_PIN BG24 IOSTANDARD LVCMOS18} [get_ports {led[1]}] ;
 # set_property PACKAGE_PIN BG24     [get_ports "GPIO_LED_1_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L18P_T2U_N10_AD2P_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "GPIO_LED_1_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L18P_T2U_N10_AD2P_67
-set_property -dict {PACKAGE_PIN BH24 IOSTANDARD LVCMOS18} [get_ports {leds[0]}] ;
+set_property -dict {PACKAGE_PIN BH24 IOSTANDARD LVCMOS18} [get_ports {led[0]}] ;
 # set_property PACKAGE_PIN BH24     [get_ports "GPIO_LED_0_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L18N_T2U_N11_AD2N_67
 # set_property IOSTANDARD  LVCMOS18 [get_ports "GPIO_LED_0_LS"] ;# Bank  67 VCCO - VCC1V8   - IO_L18N_T2U_N11_AD2N_67
 
