@@ -88,8 +88,6 @@ module ariane_xilinx (
   output logic [ 0:0]  ddr3_odt    ,
 `endif //  `ifdef ARIANE_XILINX_MEM_DDR3
 `ifdef ARIANE_XILINX_MEM_DDR4
-  input  wire          c0_sys_clk_p    ,
-  input  wire          c0_sys_clk_n    ,
   output wire [16:0]   c0_ddr4_adr     ,
   output wire [1:0]    c0_ddr4_ba      ,
   output wire [0:0]    c0_ddr4_cke     ,
@@ -1294,8 +1292,8 @@ axi_dwidth_converter_512_64 i_axi_dwidth_converter_512_64 (
   xlnx_ddr4 i_ddr (
     .c0_init_calib_complete (                              ),
     .dbg_clk                (                              ),
-    .c0_sys_clk_p           ( c0_sys_clk_p                 ),
-    .c0_sys_clk_n           ( c0_sys_clk_n                 ),
+    .c0_sys_clk_p           ( sys_clk_p                    ),
+    .c0_sys_clk_n           ( sys_clk_n                    ),
     .dbg_bus                (                              ),
     .c0_ddr4_adr            ( c0_ddr4_adr                  ),
     .c0_ddr4_ba             ( c0_ddr4_ba                   ),

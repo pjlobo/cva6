@@ -1,10 +1,10 @@
 # System clock
-set_property -dict {PACKAGE_PIN BJ4 IOSTANDARD  DIFF_SSTL12}  [get_ports sys_clk_p] ;
-# set_property PACKAGE_PIN BJ4         [get_ports "QDR4_CLK_100MHZ_P"] ;# Bank  69 VCCO - QDR4_VDDQ_1V2 - IO_L11P_T1U_N8_GC_69
-# set_property IOSTANDARD  DIFF_SSTL12 [get_ports "QDR4_CLK_100MHZ_P"] ;# Bank  69 VCCO - QDR4_VDDQ_1V2 - IO_L11P_T1U_N8_GC_69
-set_property -dict {PACKAGE_PIN BK3 IOSTANDARD  DIFF_SSTL12}  [get_ports sys_clk_n] ;
-# set_property PACKAGE_PIN BK3         [get_ports "QDR4_CLK_100MHZ_N"] ;# Bank  69 VCCO - QDR4_VDDQ_1V2 - IO_L11N_T1U_N9_GC_69
-# set_property IOSTANDARD  DIFF_SSTL12 [get_ports "QDR4_CLK_100MHZ_N"] ;# Bank  69 VCCO - QDR4_VDDQ_1V2 - IO_L11N_T1U_N9_GC_69
+set_property -dict {PACKAGE_PIN BH51 IOSTANDARD DIFF_SSTL12} [get_ports sys_clk_p] ;
+# set_property PACKAGE_PIN BH51        [get_ports "DDR4_CLK_100MHZ_P"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L11P_T1U_N8_GC_66
+# set_property IOSTANDARD  DIFF_SSTL12 [get_ports "DDR4_CLK_100MHZ_P"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L11P_T1U_N8_GC_66
+set_property -dict {PACKAGE_PIN BJ51 IOSTANDARD DIFF_SSTL12} [get_ports sys_clk_n] ;
+# set_property PACKAGE_PIN BJ51        [get_ports "DDR4_CLK_100MHZ_N"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L11N_T1U_N9_GC_66
+# set_property IOSTANDARD  DIFF_SSTL12 [get_ports "DDR4_CLK_100MHZ_N"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L11N_T1U_N9_GC_66
 
 create_clock -period 10.000 -name sys_clk [get_ports sys_clk_p]
 
