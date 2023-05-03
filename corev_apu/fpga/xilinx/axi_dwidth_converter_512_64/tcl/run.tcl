@@ -8,7 +8,7 @@ set_property board_part $boardName [current_project]
 
 create_ip -name axi_dwidth_converter -vendor xilinx.com -library ip -version 2.1 -module_name $ipName
 
-set_property -dict [list CONFIG.Component_Name {axi_dwidth_converter_512_64} CONFIG.ADDR_WIDTH {64} CONFIG.SI_DATA_WIDTH {64} CONFIG.MI_DATA_WIDTH {512} CONFIG.SI_ID_WIDTH {5} CONFIG.MI_DATA_WIDTH {512}] [get_ips $ipName]
+set_property -dict [list CONFIG.ADDR_WIDTH {64} CONFIG.SI_DATA_WIDTH {64} CONFIG.MI_DATA_WIDTH {512} CONFIG.SI_ID_WIDTH {5} CONFIG.MI_DATA_WIDTH {512}] [get_ips $ipName]
 
 generate_target {instantiation_template} [get_files ./$ipName.srcs/sources_1/ip/$ipName/$ipName.xci]
 
