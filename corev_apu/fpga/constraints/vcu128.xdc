@@ -559,7 +559,7 @@ set_property -dict {PACKAGE_PIN BF22 IOSTANDARD LVCMOS18 PULLUP true} [get_ports
 # set_property IOSTANDARD  LVDS     [get_ports "QSFP2_RECCLK_N"] ;# Bank  67 VCCO - VCC1V8   - IO_L11N_T1U_N9_GC_67
 # set_property PACKAGE_PIN BJ26     [get_ports "QSFP2_RECCLK_P"] ;# Bank  67 VCCO - VCC1V8   - IO_L11P_T1U_N8_GC_67
 # set_property IOSTANDARD  LVDS     [get_ports "QSFP2_RECCLK_P"] ;# Bank  67 VCCO - VCC1V8   - IO_L11P_T1U_N8_GC_67
-# set_property PACKAGE_PIN BL25     [get_ports "SMA_CLK_OUTPUT<_N"] ;# Bank  67 VCCO - VCC1V8   - IO_L10N_T1U_N7_QBC_AD4N_67
+# set_property PACKAGE_PIN BL25     [get_ports "SMA_CLK_OUTPUT_N"] ;# Bank  67 VCCO - VCC1V8   - IO_L10N_T1U_N7_QBC_AD4N_67
 # set_property IOSTANDARD  LVDS     [get_ports "SMA_CLK_OUTPUT_N"] ;# Bank  67 VCCO - VCC1V8   - IO_L10N_T1U_N7_QBC_AD4N_67
 # set_property PACKAGE_PIN BK26     [get_ports "SMA_CLK_OUTPUT_P"] ;# Bank  67 VCCO - VCC1V8   - IO_L10P_T1U_N6_QBC_AD4P_67
 # set_property IOSTANDARD  LVDS     [get_ports "SMA_CLK_OUTPUT_P"] ;# Bank  67 VCCO - VCC1V8   - IO_L10P_T1U_N6_QBC_AD4P_67
