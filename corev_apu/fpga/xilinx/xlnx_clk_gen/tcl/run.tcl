@@ -1,5 +1,12 @@
 set partNumber $::env(XILINX_PART)
 set boardName  $::env(XILINX_BOARD)
+set boardNameShort $::env(BOARD)
+
+if {$boardNameShort eq "vcu128"} {
+    set primInFreq 333.333
+} else {
+    set primInFreq 200.000
+}
 
 set ipName xlnx_clk_gen
 
@@ -8,7 +15,7 @@ set_property board_part $boardName [current_project]
 
 create_ip -name clk_wiz -vendor xilinx.com -library ip -module_name $ipName
 
-set_property -dict [list CONFIG.PRIM_IN_FREQ {200.000} \
+set_property -dict [list CONFIG.PRIM_IN_FREQ $primInFreq \
                         CONFIG.NUM_OUT_CLKS {4} \
                         CONFIG.CLKOUT2_USED {true} \
                         CONFIG.CLKOUT3_USED {true} \
