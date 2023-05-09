@@ -14,6 +14,7 @@
 // Modified by: Pedro Lobo <pedro.lobo@upm.es>
 
 `include "axi/typedef.svh"
+`include "axi/assign.svh"
 
 `include "xilinx-boards.svh"
 
