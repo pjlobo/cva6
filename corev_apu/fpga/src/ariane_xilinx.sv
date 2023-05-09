@@ -1208,7 +1208,7 @@ xlnx_mig_7_ddr3 i_ddr (
   logic [1:0]   dram_dwidth_axi_rresp;
   logic [511:0] dram_dwidth_axi_rdata;
 
-axi_dwidth_converter_512_64 i_axi_dwidth_converter_512_64 (
+xlnx_axi_dwidth_converter_512_64 i_xlnx_axi_dwidth_converter_512_64 (
   .s_axi_aclk     ( ddr_clock_out            ),
   .s_axi_aresetn  ( ndmreset_n               ),
 

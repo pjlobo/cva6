@@ -1,7 +1,7 @@
 set partNumber $::env(XILINX_PART)
 set boardName  $::env(XILINX_BOARD)
 
-set ipName axi_dwidth_converter_512_64
+set ipName xlnx_axi_dwidth_converter_512_64
 
 create_project $ipName . -force -part $partNumber
 set_property board_part $boardName [current_project]
