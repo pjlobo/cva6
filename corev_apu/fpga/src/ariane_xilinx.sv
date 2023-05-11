@@ -1075,12 +1075,20 @@ xlnx_axi_clock_converter i_xlnx_axi_clock_converter_ddr (
   .m_axi_rready   ( s_axi_rready     )
 );
 
+logic clk_gen_reset;
+ 
+`ifdef VCU128
+   assign clk_gen_reset = cpu_reset | ddr_sync_reset;
+`else
+   assign clk_gen_reset = cpu_reset;
+`endif
+
 xlnx_clk_gen i_xlnx_clk_gen (
   .clk_out1 ( clk           ), // 50 MHz
   .clk_out2 ( phy_tx_clk    ), // 125 MHz (for RGMII PHY)
   .clk_out3 ( eth_clk       ), // 125 MHz quadrature (90 deg phase shift)
   .clk_out4 ( sd_clk_sys    ), // 50 MHz clock
-  .reset    ( cpu_reset     ),
+  .reset    ( clk_gen_reset ),
   .locked   ( pll_locked    ),
   .clk_in1  ( ddr_clock_out )
 );
