@@ -1,0 +1,8 @@
+vivado_libs
+work
+*.wlf
+modelsim.ini
+*.mti
+transcript
+*.transcript
+*.log
