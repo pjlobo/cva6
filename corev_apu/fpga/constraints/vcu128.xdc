@@ -1,3 +1,11 @@
+#
+# Constraints file for VCU128
+#
+
+# Config file properties
+set_property CONFIG_MODE SPIx4 [current_design]
+set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
+
 # System clock
 set_property -dict {PACKAGE_PIN BH51 IOSTANDARD DIFF_SSTL12} [get_ports sys_clk_p] ;
 # set_property PACKAGE_PIN BH51        [get_ports "DDR4_CLK_100MHZ_P"] ;# Bank  66 VCCO - DDR4_VDDQ_1V2 - IO_L11P_T1U_N8_GC_66
@@ -461,10 +469,12 @@ set_property -dict {PACKAGE_PIN BF50 IOSTANDARD SSTL12_DCI} [get_ports {c0_ddr4_
 
 
 # ETHERNET
-set_property -dict {PACKAGE_PIN BG22 IOSTANDARD LVDS} [get_ports eth_sgmii_tx_p] ;
+#set_property -dict {PACKAGE_PIN BG22 IOSTANDARD LVDS} [get_ports eth_sgmii_tx_p] ;
+set_property -dict {PACKAGE_PIN BG22 IOSTANDARD LVCMOS18} [get_ports eth_sgmii_tx_p] ;
 # set_property PACKAGE_PIN BG22     [get_ports "ENET_SGMII_IN_P"] ;# Bank  67 VCCO - VCC1V8   - IO_L23P_T3U_N8_67
 # set_property IOSTANDARD  LVDS     [get_ports "ENET_SGMII_IN_P"] ;# Bank  67 VCCO - VCC1V8   - IO_L23P_T3U_N8_67
-set_property -dict {PACKAGE_PIN BH22 IOSTANDARD LVDS} [get_ports eth_sgmii_tx_n] ;
+#set_property -dict {PACKAGE_PIN BH22 IOSTANDARD LVDS} [get_ports eth_sgmii_tx_n] ;
+set_property -dict {PACKAGE_PIN BH22 IOSTANDARD LVCMOS18} [get_ports eth_sgmii_tx_n] ;
 # set_property PACKAGE_PIN BH22     [get_ports "ENET_SGMII_IN_N"] ;# Bank  67 VCCO - VCC1V8   - IO_L23N_T3U_N9_67
 # set_property IOSTANDARD  LVDS     [get_ports "ENET_SGMII_IN_N"] ;# Bank  67 VCCO - VCC1V8   - IO_L23N_T3U_N9_67
 set_property -dict {PACKAGE_PIN BJ22 IOSTANDARD LVDS} [get_ports eth_sgmii_rx_p] ;
@@ -490,6 +500,78 @@ set_property -dict {PACKAGE_PIN BF22 IOSTANDARD LVCMOS18 PULLUP true} [get_ports
 # set_property IOSTANDARD  LVCMOS18 [get_ports "ENET_PDWN_B_I_INT_B_O"] ;# Bank  67 VCCO - VCC1V8   - IO_L24P_T3U_N10_67
 #set_property -dict {PACKAGE_PIN XXXX IOSTANDARD LVCMOS18} [get_ports eth_rst_n]
 # XXX Ethernet PHY reset is connected to an I2C port extender at addr 0x20
+
+
+# FMCP CONNECTOR PINS
+
+# J1 H7 (LA02_P) <-> FPGA L23 - TMS
+set_property -dict {PACKAGE_PIN L23 IOSTANDARD LVCMOS18} [get_ports tms] ; 
+# set_property PACKAGE_PIN L23      [get_ports "FMCP_HSPC_LA02_P"] ;# Bank  72 VCCO - VADJ     - IO_L4P_T0U_N6_DBC_AD7P_72
+# set_property IOSTANDARD  LVDS     [get_ports "FMCP_HSPC_LA02_P"] ;# Bank  72 VCCO - VADJ     - IO_L4P_T0U_N6_DBC_AD7P_72
+
+# J1 H8 (LA02_N) <-> FPGA K22 - TCK
+# set_property -dict {PACKAGE_PIN K22 IOSTANDARD LVCMOS18} [get_ports tck] ;
+# set_property PACKAGE_PIN K22      [get_ports "FMCP_HSPC_LA02_N"] ;# Bank  72 VCCO - VADJ     - IO_L4N_T0U_N7_DBC_AD7N_72
+# set_property IOSTANDARD  LVDS     [get_ports "FMCP_HSPC_LA02_N"] ;# Bank  72 VCCO - VADJ     - IO_L4N_T0U_N7_DBC_AD7N_72
+# J1 H4 (CLK0_M2C_P) <-> FPGA F24 - TCK
+set_property -dict {PACKAGE_PIN F24 IOSTANDARD LVCMOS18} [get_ports tck] ;
+# set_property PACKAGE_PIN F24      [get_ports "FMCP_HSPC_CLK0_M2C_P"] ;# Bank  72 VCCO - VADJ     - IO_L11P_T1U_N8_GC_72
+# set_property IOSTANDARD  LVDS     [get_ports "FMCP_HSPC_CLK0_M2C_P"] ;# Bank  72 VCCO - VADJ     - IO_L11P_T1U_N8_GC_72
+
+# J1 H10 (LA04_P) <-> FPGA C25 - TDO
+set_property -dict {PACKAGE_PIN C25 IOSTANDARD LVCMOS18} [get_ports tdo] ;
+# set_property PACKAGE_PIN C25      [get_ports "FMCP_HSPC_LA04_P"] ;# Bank  72 VCCO - VADJ     - IO_L20P_T3L_N2_AD1P_72
+# set_property IOSTANDARD  LVDS     [get_ports "FMCP_HSPC_LA04_P"] ;# Bank  72 VCCO - VADJ     - IO_L20P_T3L_N2_AD1P_72
+
+# J1 H11 (LA04_N) <-> FPGA C24 - TDI
+set_property -dict {PACKAGE_PIN C24 IOSTANDARD LVCMOS18} [get_ports tdi] ;
+# set_property PACKAGE_PIN C24      [get_ports "FMCP_HSPC_LA04_N"] ;# Bank  72 VCCO - VADJ     - IO_L20N_T3L_N3_AD1N_72
+# set_property IOSTANDARD  LVDS     [get_ports "FMCP_HSPC_LA04_N"] ;# Bank  72 VCCO - VADJ     - IO_L20N_T3L_N3_AD1N_72
+
+# J1 H13 (LA07_P) <-> FPGA K27 - RST
+set_property -dict {PACKAGE_PIN K27 IOSTANDARD LVCMOS18} [get_ports trst_n] ;
+# set_property PACKAGE_PIN K27      [get_ports "FMCP_HSPC_LA07_P"] ;# Bank  72 VCCO - VADJ     - IO_L5P_T0U_N8_AD14P_72
+# set_property IOSTANDARD  LVDS     [get_ports "FMCP_HSPC_LA07_P"] ;# Bank  72 VCCO - VADJ     - IO_L5P_T0U_N8_AD14P_72
+
+# J1 H16 (LA11_P) <-> FPGA B26 - PROTECT
+#set_property -dict {PACKAGE_PIN B26 IOSTANDARD LVCMOS18} [get_ports "FMCP_HSPC_LA11_P"]  ;
+# set_property PACKAGE_PIN B26      [get_ports "FMCP_HSPC_LA11_P"] ;# Bank  72 VCCO - VADJ     - IO_L21P_T3L_N4_AD8P_72
+# set_property IOSTANDARD  LVDS     [get_ports "FMCP_HSPC_LA11_P"] ;# Bank  72 VCCO - VADJ     - IO_L21P_T3L_N4_AD8P_72
+
+# J1 H17 (LA11_N) <-> FPGA B25 - DETECT
+#set_property -dict {PACKAGE_PIN B25 IOSTANDARD LVCMOS18} [get_ports "FMCP_HSPC_LA11_N"] ;
+# set_property PACKAGE_PIN B25      [get_ports "FMCP_HSPC_LA11_N"] ;# Bank  72 VCCO - VADJ     - IO_L21N_T3L_N5_AD8N_72
+# set_property IOSTANDARD  LVDS     [get_ports "FMCP_HSPC_LA11_N"] ;# Bank  72 VCCO - VADJ     - IO_L21N_T3L_N5_AD8N_72
+
+# J1 H19 (LA15_P) <-> FPGA J26 - SDIO_DAT1
+#set_property -dict {PACKAGE_PIN J26 IOSTANDARD LVCMOS18} [get_ports "FMCP_HSPC_LA15_P"] ;
+# set_property PACKAGE_PIN J26      [get_ports "FMCP_HSPC_LA15_P"] ;# Bank  72 VCCO - VADJ     - IO_L6P_T0U_N10_AD6P_72
+# set_property IOSTANDARD  LVDS     [get_ports "FMCP_HSPC_LA15_P"] ;# Bank  72 VCCO - VADJ     - IO_L6P_T0U_N10_AD6P_72
+
+# J1 H22 (LA19_P) <-> FPGA B18 - SDIO_DAT0
+set_property -dict {PACKAGE_PIN B18 IOSTANDARD LVCMOS18} [get_ports spi_miso] ;
+# set_property PACKAGE_PIN B18      [get_ports "FMCP_HSPC_LA19_P"] ;# Bank  71 VCCO - VADJ     - IO_L21P_T3L_N4_AD8P_71
+# set_property IOSTANDARD  LVDS     [get_ports "FMCP_HSPC_LA19_P"] ;# Bank  71 VCCO - VADJ     - IO_L21P_T3L_N4_AD8P_71
+
+# J1 H25 (LA21_P) <-> FPGA A19 - SDIO_CLK
+set_property -dict {PACKAGE_PIN A19 IOSTANDARD LVCMOS18} [get_ports spi_clk_o] ;
+# set_property PACKAGE_PIN A19      [get_ports "FMCP_HSPC_LA21_P"] ;# Bank  71 VCCO - VADJ     - IO_L23P_T3U_N8_71
+# set_property IOSTANDARD  LVDS     [get_ports "FMCP_HSPC_LA21_P"] ;# Bank  71 VCCO - VADJ     - IO_L23P_T3U_N8_71
+
+# J1 H31 (LA28_P) <-> FPGA G21 - SDIO_CMD
+set_property -dict {PACKAGE_PIN G21 IOSTANDARD LVCMOS18} [get_ports spi_mosi] ;
+# set_property PACKAGE_PIN G21      [get_ports "FMCP_HSPC_LA28_P"] ;# Bank  71 VCCO - VADJ     - IO_L10P_T1U_N6_QBC_AD4P_71
+# set_property IOSTANDARD  LVDS     [get_ports "FMCP_HSPC_LA28_P"] ;# Bank  71 VCCO - VADJ     - IO_L10P_T1U_N6_QBC_AD4P_71
+
+# J1 H34 (LA30_P) <-> FPGA J20 - SDIO_CD_DAT3
+set_property -dict {PACKAGE_PIN J20 IOSTANDARD LVCMOS18} [get_ports spi_ss] ;
+# set_property PACKAGE_PIN J20      [get_ports "FMCP_HSPC_LA30_P"] ;# Bank  71 VCCO - VADJ     - IO_L6P_T0U_N10_AD6P_71
+# set_property IOSTANDARD  LVDS     [get_ports "FMCP_HSPC_LA30_P"] ;# Bank  71 VCCO - VADJ     - IO_L6P_T0U_N10_AD6P_71
+
+# J1 H37 (LD32_P) <-> FPGA H20 - SDIO_DAT2
+#set_property -dict {PACKAGE_PIN H20 IOSTANDARD LVCMOS18} [get_ports "FMCP_HSPC_LA32_P"] ;
+# set_property PACKAGE_PIN H20      [get_ports "FMCP_HSPC_LA32_P"] ;# Bank  71 VCCO - VADJ     - IO_L8P_T1L_N2_AD5P_71
+# set_property IOSTANDARD  LVDS     [get_ports "FMCP_HSPC_LA32_P"] ;# Bank  71 VCCO - VADJ     - IO_L8P_T1L_N2_AD5P_71
 
 #####################################
 #
