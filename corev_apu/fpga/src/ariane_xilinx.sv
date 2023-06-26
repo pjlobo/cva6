@@ -116,7 +116,7 @@ module ariane_xilinx (
   output logic         eth_mdc     ,
 `endif //  `ifdef ARIANE_XILINX_ETH_RGMII
 `ifdef ARIANE_XILINX_ETH_SGMII
-  output wire          eth_rst_n   ,
+  //output wire          eth_rst_n   ,
   input  wire          eth_sgmii_rxck_p,
   input  wire          eth_sgmii_rxck_n,
   input  wire          eth_sgmii_rx_p  ,
@@ -805,7 +805,7 @@ ariane_peripherals #(
     .InclSPI      ( 1'b0         ),
     .InclEthernet ( 1'b0         )
     `elsif VCU128
-    .InclSPI      ( 1'b0         ),
+    .InclSPI      ( 1'b1         ),
     .InclEthernet ( 1'b0         )
     `endif
 ) i_ariane_peripherals (
@@ -835,7 +835,7 @@ ariane_peripherals #(
     .phy_tx_clk_i   ( phy_tx_clk                  ),
     `endif //  `ifdef ARIANE_XILINX_ETH_RGMII
     `ifdef ARIANE_XILINX_ETH_SGMII
-    .eth_rst_n,
+    //.eth_rst_n,
     .eth_sgmii_rxck_p,
     .eth_sgmii_rxck_n,
     .eth_sgmii_rx_p,
