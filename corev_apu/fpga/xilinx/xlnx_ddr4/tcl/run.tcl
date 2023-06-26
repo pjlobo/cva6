@@ -21,7 +21,6 @@ if {$boardNameShort eq "vcu128"} {
                             CONFIG.C0.DDR4_Ecc {true} \
                             CONFIG.C0.DDR4_AxiSelection {true} \
                             CONFIG.C0.DDR4_AxiDataWidth {512} \
-                            CONFIG.ADDN_UI_CLKOUT1_FREQ_HZ {100} \
                             CONFIG.C0.BANK_GROUP_WIDTH {1} \
                             CONFIG.C0.CS_WIDTH {2} \
                            ] [get_ips $ipName]
@@ -30,6 +29,7 @@ if {$boardNameShort eq "vcu128"} {
   exit 2
 }
 
+#                            CONFIG.ADDN_UI_CLKOUT1_FREQ_HZ {100}
 generate_target {instantiation_template} [get_files ./$ipName.srcs/sources_1/ip/$ipName/$ipName.xci]
 generate_target all [get_files  ./$ipName.srcs/sources_1/ip/$ipName/$ipName.xci]
 create_ip_run [get_files -of_objects [get_fileset sources_1] ./$ipName.srcs/sources_1/ip/$ipName/$ipName.xci]
