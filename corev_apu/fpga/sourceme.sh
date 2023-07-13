@@ -32,7 +32,7 @@ fi
 if [ "$BOARD" = "vcu128" ]; then
   echo -n "Configuring for "
   echo "Virtex UtraScale+ vcu128"
-  export XILINX_PART="xcvu37p-fsvh2892-2-e"
+  export XILINX_PART="xcvu37p-fsvh2892-2l-e"
   export XILINX_BOARD="xilinx.com:vcu128:part0:1.0"
   export CLK_PERIOD_NS="20"
 fi
